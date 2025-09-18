@@ -26,12 +26,12 @@
             <form id="authForm" class="space-y-4">
                 <div>
                     <label class="block text-sm font-medium text-white mb-2">Username</label>
-                    <input type="text" id="username" class="w-full px-4 py-3 bg-background border border-border rounded-lg text-white placeholder-text-secondary focus:border-primary focus:outline-none transition-colors" placeholder="Enter username" required>
+                    <input type="text" id="username" class="w-full px-4 py-3 bg-gray-800 border border-border rounded-lg text-white placeholder-gray-400 focus:border-primary focus:outline-none transition-colors" placeholder="Enter username" required>
                 </div>
                 
                 <div>
                     <label class="block text-sm font-medium text-white mb-2">Password</label>
-                    <input type="password" id="password" class="w-full px-4 py-3 bg-background border border-border rounded-lg text-white placeholder-text-secondary focus:border-primary focus:outline-none transition-colors" placeholder="Enter password" required>
+                    <input type="password" id="password" class="w-full px-4 py-3 bg-gray-800 border border-border rounded-lg text-white placeholder-gray-400 focus:border-primary focus:outline-none transition-colors" placeholder="Enter password" required>
                 </div>
                 
                 <div id="authError" class="text-red-400 text-sm hidden">Invalid credentials. Please try again.</div>
@@ -1635,7 +1635,8 @@
         // Authentication System
         class AuthManager {
             constructor() {
-                this.authUrl = 'https://n8n.gamkers.in/webhook/auth-login';
+                this.username = 'nowful_gamkers';
+                this.password = 'instapro@123';
                 this.cookieName = 'instapro_auth';
                 this.cookieExpireDays = 3;
                 this.init();
@@ -1669,7 +1670,7 @@
                 });
             }
 
-            async handleLogin() {
+            handleLogin() {
                 const usernameInput = document.getElementById('username');
                 const passwordInput = document.getElementById('password');
                 const errorDiv = document.getElementById('authError');
@@ -1677,33 +1678,13 @@
                 const enteredUsername = usernameInput.value.trim();
                 const enteredPassword = passwordInput.value;
 
-                try {
-                    const response = await fetch(this.authUrl, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            username: enteredUsername,
-                            password: enteredPassword
-                        })
-                    });
-
-                    const result = await response.json();
-
-                    if (response.ok && result.success) {
-                        this.setAuthCookie(enteredUsername, result.token);
-                        this.hideLoginModal();
-                        errorDiv.classList.add('hidden');
-                        usernameInput.value = '';
-                        passwordInput.value = '';
-                    } else {
-                        errorDiv.textContent = result.message || 'Invalid credentials. Please try again.';
-                        errorDiv.classList.remove('hidden');
-                        passwordInput.value = '';
-                    }
-                } catch (error) {
-                    errorDiv.textContent = 'Authentication service unavailable. Please try again later.';
+                if (enteredUsername === this.username && enteredPassword === this.password) {
+                    this.setAuthCookie();
+                    this.hideLoginModal();
+                    errorDiv.classList.add('hidden');
+                    usernameInput.value = '';
+                    passwordInput.value = '';
+                } else {
                     errorDiv.classList.remove('hidden');
                     passwordInput.value = '';
                 }
@@ -1724,15 +1705,14 @@
                 document.body.style.overflow = 'auto';
             }
 
-            setAuthCookie(username, token) {
+            setAuthCookie() {
                 const expirationDate = new Date();
                 expirationDate.setTime(expirationDate.getTime() + (this.cookieExpireDays * 24 * 60 * 60 * 1000));
                 const expires = "expires=" + expirationDate.toUTCString();
                 const authValue = btoa(JSON.stringify({
                     authenticated: true,
                     timestamp: Date.now(),
-                    username: username,
-                    token: token
+                    username: this.username
                 }));
                 document.cookie = `${this.cookieName}=${authValue};${expires};path=/;SameSite=Strict`;
             }
@@ -1760,8 +1740,7 @@
                     const maxAge = this.cookieExpireDays * 24 * 60 * 60 * 1000;
                     
                     return authData.authenticated && 
-                           authData.username && 
-                           authData.token && 
+                           authData.username === this.username && 
                            cookieAge < maxAge;
                 } catch (error) {
                     return false;
