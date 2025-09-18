@@ -10,6 +10,38 @@
 <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Finstagramp4396back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.5"></script>
 </head>
 <body class="bg-gradient-to-br from-background via-surface to-purple-900/20 min-h-screen">
+    <!-- Authentication Modal -->
+    <div id="authModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center hidden">
+        <div class="bg-surface rounded-2xl p-8 max-w-md w-full mx-4 border border-border">
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-bold text-white mb-2">Authentication Required</h2>
+                <p class="text-text-secondary">Please enter your credentials to access InstagramPro</p>
+            </div>
+            
+            <form id="authForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-white mb-2">Username</label>
+                    <input type="text" id="username" class="w-full px-4 py-3 bg-background border border-border rounded-lg text-white placeholder-text-secondary focus:border-primary focus:outline-none transition-colors" placeholder="Enter username" required>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-white mb-2">Password</label>
+                    <input type="password" id="password" class="w-full px-4 py-3 bg-background border border-border rounded-lg text-white placeholder-text-secondary focus:border-primary focus:outline-none transition-colors" placeholder="Enter password" required>
+                </div>
+                
+                <div id="authError" class="text-red-400 text-sm hidden">Invalid credentials. Please try again.</div>
+                
+                <button type="submit" class="w-full bg-gradient-to-r from-primary to-secondary text-white py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">
+                    Login
+                </button>
+            </form>
+        </div>
+    </div>
     <!-- Fixed Header -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-lg border-b border-border">
         <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -38,6 +70,12 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5-5-5h5v-8h5v8z"/>
                     </svg>
                     <div class="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full"></div>
+                </button>
+                <button id="logoutBtn" class="px-4 py-2 text-text-secondary hover:text-white transition-colors border border-border rounded-lg hover:border-primary">
+                    <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+                    </svg>
+                    Logout
                 </button>
                 <div class="w-8 h-8 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
             </div>
@@ -1592,6 +1630,148 @@
             updateKeywordsDisplay();
             addRemoveResponseHandlers();
             updateResponseCount();
+        });
+
+        // Authentication System
+        class AuthManager {
+            constructor() {
+                this.authUrl = 'https://n8n.gamkers.in/webhook/auth-login';
+                this.cookieName = 'instapro_auth';
+                this.cookieExpireDays = 3;
+                this.init();
+            }
+
+            init() {
+                this.checkAuthentication();
+                this.setupEventListeners();
+            }
+
+            checkAuthentication() {
+                const authCookie = this.getCookie(this.cookieName);
+                if (!authCookie || !this.isValidAuthCookie(authCookie)) {
+                    this.showLoginModal();
+                } else {
+                    this.hideLoginModal();
+                }
+            }
+
+            setupEventListeners() {
+                const authForm = document.getElementById('authForm');
+                const logoutBtn = document.getElementById('logoutBtn');
+
+                authForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.handleLogin();
+                });
+
+                logoutBtn.addEventListener('click', () => {
+                    this.handleLogout();
+                });
+            }
+
+            async handleLogin() {
+                const usernameInput = document.getElementById('username');
+                const passwordInput = document.getElementById('password');
+                const errorDiv = document.getElementById('authError');
+
+                const enteredUsername = usernameInput.value.trim();
+                const enteredPassword = passwordInput.value;
+
+                try {
+                    const response = await fetch(this.authUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            username: enteredUsername,
+                            password: enteredPassword
+                        })
+                    });
+
+                    const result = await response.json();
+
+                    if (response.ok && result.success) {
+                        this.setAuthCookie(enteredUsername, result.token);
+                        this.hideLoginModal();
+                        errorDiv.classList.add('hidden');
+                        usernameInput.value = '';
+                        passwordInput.value = '';
+                    } else {
+                        errorDiv.textContent = result.message || 'Invalid credentials. Please try again.';
+                        errorDiv.classList.remove('hidden');
+                        passwordInput.value = '';
+                    }
+                } catch (error) {
+                    errorDiv.textContent = 'Authentication service unavailable. Please try again later.';
+                    errorDiv.classList.remove('hidden');
+                    passwordInput.value = '';
+                }
+            }
+
+            handleLogout() {
+                this.deleteCookie(this.cookieName);
+                this.showLoginModal();
+            }
+
+            showLoginModal() {
+                document.getElementById('authModal').classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+
+            hideLoginModal() {
+                document.getElementById('authModal').classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+
+            setAuthCookie(username, token) {
+                const expirationDate = new Date();
+                expirationDate.setTime(expirationDate.getTime() + (this.cookieExpireDays * 24 * 60 * 60 * 1000));
+                const expires = "expires=" + expirationDate.toUTCString();
+                const authValue = btoa(JSON.stringify({
+                    authenticated: true,
+                    timestamp: Date.now(),
+                    username: username,
+                    token: token
+                }));
+                document.cookie = `${this.cookieName}=${authValue};${expires};path=/;SameSite=Strict`;
+            }
+
+            getCookie(name) {
+                const nameEQ = name + "=";
+                const ca = document.cookie.split(';');
+                for (let i = 0; i < ca.length; i++) {
+                    let c = ca[i];
+                    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+                }
+                return null;
+            }
+
+            deleteCookie(name) {
+                document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+            }
+
+            isValidAuthCookie(cookieValue) {
+                try {
+                    const authData = JSON.parse(atob(cookieValue));
+                    const currentTime = Date.now();
+                    const cookieAge = currentTime - authData.timestamp;
+                    const maxAge = this.cookieExpireDays * 24 * 60 * 60 * 1000;
+                    
+                    return authData.authenticated && 
+                           authData.username && 
+                           authData.token && 
+                           cookieAge < maxAge;
+                } catch (error) {
+                    return false;
+                }
+            }
+        }
+
+        // Initialize authentication when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new AuthManager();
         });
     </script>
 <script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
