@@ -1,16 +1,1599 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Comment Automation Setup</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comment Automation Setup - InstagramPro Dashboard</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Finstagramp4396back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.5"></script>
 </head>
-<body>
-    <h1>Comment Automation Setup</h1>
-    <p>This page is for setting up comment automation.</p>
+<body class="bg-gradient-to-br from-background via-surface to-purple-900/20 min-h-screen">
+    <!-- Fixed Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-lg border-b border-border">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.07-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </div>
+                <span class="text-xl font-bold text-white">InstagramPro</span>
+            </div>
+
+            <!-- Navigation Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="landing_page.html" class="text-text-secondary hover:text-white transition-colors">Home</a>
+                <a href="analytics_dashboard.html" class="text-text-secondary hover:text-white transition-colors">Dashboard</a>
+                <a href="comment_automation_setup.html" class="text-primary font-medium">Automation</a>
+                <a href="content_strategy_insights.html" class="text-text-secondary hover:text-white transition-colors">Insights</a>
+            </div>
+
+            <!-- User Profile -->
+            <div class="flex items-center space-x-4">
+                <button class="relative p-2 text-text-secondary hover:text-white transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5-5-5h5v-8h5v8z"/>
+                    </svg>
+                    <div class="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full"></div>
+                </button>
+                <div class="w-8 h-8 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white" id="mobile-menu-btn">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-surface/95 backdrop-blur-lg border-t border-border hidden">
+            <div class="px-4 py-4 space-y-4">
+                <a href="landing_page.html" class="block text-text-secondary hover:text-white transition-colors">Home</a>
+                <a href="analytics_dashboard.html" class="block text-text-secondary hover:text-white transition-colors">Dashboard</a>
+                <a href="comment_automation_setup.html" class="block text-primary font-medium">Automation</a>
+                <a href="content_strategy_insights.html" class="block text-text-secondary hover:text-white transition-colors">Insights</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-20">
+        <div class="container mx-auto px-4 py-8">
+            <!-- Page Header -->
+            <div class="mb-8">
+                <div class="flex items-center space-x-2 text-text-secondary text-sm mb-2">
+                    <a href="analytics_dashboard.html" class="hover:text-white transition-colors">Dashboard</a>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                    <span class="text-white">Comment Automation Setup</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                    Comment Automation Setup
+                </h1>
+                <p class="text-text-secondary text-lg max-w-2xl">
+                    Configure AI-powered automated responses for Instagram engagement management. Set up intelligent comment replies to boost interaction and save time.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                <!-- Main Content Area -->
+                <div class="lg:col-span-3">
+                    <!-- Progress Indicator -->
+                    <div class="glass rounded-2xl p-6 mb-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <h2 class="text-xl font-semibold text-white">Setup Progress</h2>
+                            <span class="text-sm text-text-secondary" id="progress-text">Step 1 of 3</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <!-- Step 1 -->
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-sm font-medium step-indicator active" data-step="1">
+                                    1
+                                </div>
+                                <span class="ml-1.5 text-sm text-white step-label">Media</span>
+                            </div>
+                            <div class="flex-1 h-1 bg-border rounded-full">
+                                <div class="h-full bg-primary rounded-full transition-all duration-300" style="width: 33%" id="progress-bar"></div>
+                            </div>
+                            <!-- Step 2 -->
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-surface-light border border-border rounded-full flex items-center justify-center text-text-secondary text-sm font-medium step-indicator" data-step="2">
+                                    2
+                                </div>
+                                <span class="ml-1.5 text-sm text-text-secondary step-label">Keywords</span>
+                            </div>
+                            <div class="flex-1 h-1 bg-border rounded-full">
+                                <div class="h-full bg-border rounded-full transition-all duration-300" style="width: 0%"></div>
+                            </div>
+                            <!-- Step 3 -->
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-surface-light border border-border rounded-full flex items-center justify-center text-text-secondary text-sm font-medium step-indicator" data-step="3">
+                                    3
+                                </div>
+                                <span class="ml-1.5 text-sm text-text-secondary step-label">Responses</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step Content -->
+                    <div class="glass rounded-2xl p-6 glass-content-container">
+                        <!-- Step 1: Media Selection -->
+                        <div id="step-1" class="step-content flex flex-col items-center w-full">
+                            <div class="mb-6 text-center w-full max-w-5xl mx-auto">
+                                <h3 class="text-2xl font-semibold text-white mb-2">Select Instagram Posts</h3>
+                                <p class="text-text-secondary">Choose the posts where you want to enable automated comment responses.</p>
+                            </div>
+
+                            <!-- Search and Filter -->
+                            <div class="flex flex-col md:flex-row gap-4 mb-6 w-full max-w-5xl mx-auto">
+                                <div class="flex-1">
+                                    <div class="relative">
+                                        <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                                        </svg>
+                                        <input type="text" placeholder="Search posts..." class="w-full pl-10 pr-4 py-3 bg-surface border border-border rounded-lg text-white placeholder-text-secondary focus:border-primary focus:outline-none transition-colors" />
+                                    </div>
+                                </div>
+                                <select class="px-4 py-3 bg-surface border border-border rounded-lg text-white focus:border-primary focus:outline-none transition-colors">
+                                    <option value>All Posts</option>
+                                    <option value="recent">Recent Posts</option>
+                                    <option value="popular">Most Popular</option>
+                                    <option value="high-engagement">High Engagement</option>
+                                </select>
+                                <button class="px-6 py-3 bg-surface border border-border rounded-lg text-text-secondary hover:text-white hover:border-primary transition-colors flex items-center space-x-2">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/>
+                                    </svg>
+                                    <span>Filter</span>
+                                </button>
+                            </div>
+
+                            <!-- Media Grid -->
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 w-full max-w-5xl mx-auto">
+                                <!-- Post 1 -->
+                                <div class="relative group cursor-pointer media-item" data-post-id="1">
+                                    <div class="aspect-square rounded-lg overflow-hidden">
+                                        <img src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Instagram Post" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://images.unsplash.com/photo-1611262588024-d12430b98920?q=80&w=400&auto=format&fit=crop'; this.onerror=null;" />
+                                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                            <div class="text-white text-center">
+                                                <div class="flex items-center justify-center space-x-4 text-sm">
+                                                    <div class="flex items-center space-x-1">
+                                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                                        </svg>
+                                                        <span>1.2K</span>
+                                                    </div>
+                                                    <div class="flex items-center space-x-1">
+                                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                                        </svg>
+                                                        <span>89</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="absolute top-2 right-2">
+                                        <input type="checkbox" class="w-5 h-5 text-primary bg-surface border-border rounded focus:ring-primary focus:ring-2 post-checkbox" />
+                                    </div>
+                                    <div class="mt-2">
+                                        <p class="text-sm text-text-secondary">2 days ago</p>
+                                    </div>
+                                </div>
+
+                                <!-- Post 2 -->
+                                <div class="relative group cursor-pointer media-item" data-post-id="2">
+                                    <div class="aspect-square rounded-lg overflow-hidden">
+                                        <img src="https://images.pixabay.com/photo/2017/05/13/12/40/fashion-2309519_960_720.jpg" alt="Instagram Post" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://images.unsplash.com/photo-1515886657616-ee3925520721?q=80&w=400&auto=format&fit=crop'; this.onerror=null;" />
+                                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                            <div class="text-white text-center">
+                                                <div class="flex items-center justify-center space-x-4 text-sm">
+                                                    <div class="flex items-center space-x-1">
+                                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                                        </svg>
+                                                        <span>856</span>
+                                                    </div>
+                                                    <div class="flex items-center space-x-1">
+                                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                                        </svg>
+                                                        <span>42</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="absolute top-2 right-2">
+                                        <input type="checkbox" class="w-5 h-5 text-primary bg-surface border-border rounded focus:ring-primary focus:ring-2 post-checkbox" />
+                                    </div>
+                                    <div class="mt-2">
+                                        <p class="text-sm text-text-secondary">5 days ago</p>
+                                    </div>
+                                </div>
+
+                                <!-- Post 3 -->
+                                <div class="relative group cursor-pointer media-item" data-post-id="3">
+                                    <div class="aspect-square rounded-lg overflow-hidden">
+                                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd32df4?q=80&w=400&auto=format&fit=crop" alt="Instagram Post" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=400'; this.onerror=null;" />
+                                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                            <div class="text-white text-center">
+                                                <div class="flex items-center justify-center space-x-4 text-sm">
+                                                    <div class="flex items-center space-x-1">
+                                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                                        </svg>
+                                                        <span>2.1K</span>
+                                                    </div>
+                                                    <div class="flex items-center space-x-1">
+                                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                                        </svg>
+                                                        <span>156</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="absolute top-2 right-2">
+                                        <input type="checkbox" class="w-5 h-5 text-primary bg-surface border-border rounded focus:ring-primary focus:ring-2 post-checkbox" />
+                                    </div>
+                                    <div class="mt-2">
+                                        <p class="text-sm text-text-secondary">1 week ago</p>
+                                    </div>
+                                </div>
+
+                                <!-- Post 4 -->
+                                <div class="relative group cursor-pointer media-item" data-post-id="4">
+                                    <div class="aspect-square rounded-lg overflow-hidden">
+                                        <img src="https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Instagram Post" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://images.pixabay.com/photo/2016/11/29/18/10/bear-1283347_960_720.jpg'; this.onerror=null;" />
+                                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                            <div class="text-white text-center">
+                                                <div class="flex items-center justify-center space-x-4 text-sm">
+                                                    <div class="flex items-center space-x-1">
+                                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                                        </svg>
+                                                        <span>743</span>
+                                                    </div>
+                                                    <div class="flex items-center space-x-1">
+                                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                                        </svg>
+                                                        <span>67</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="absolute top-2 right-2">
+                                        <input type="checkbox" class="w-5 h-5 text-primary bg-surface border-border rounded focus:ring-primary focus:ring-2 post-checkbox" />
+                                    </div>
+                                    <div class="mt-2">
+                                        <p class="text-sm text-text-secondary">1 week ago</p>
+                                    </div>
+                                </div>
+
+                                <!-- Post 5 -->
+                                <div class="relative group cursor-pointer media-item" data-post-id="5">
+                                    <div class="aspect-square rounded-lg overflow-hidden">
+                                        <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=400&auto=format&fit=crop" alt="Instagram Post" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://images.pixabay.com/photo/2016/11/29/13/14/attractive-1869761_960_720.jpg'; this.onerror=null;" />
+                                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                            <div class="text-white text-center">
+                                                <div class="flex items-center justify-center space-x-4 text-sm">
+                                                    <div class="flex items-center space-x-1">
+                                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                                        </svg>
+                                                        <span>1.8K</span>
+                                                    </div>
+                                                    <div class="flex items-center space-x-1">
+                                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                                        </svg>
+                                                        <span>124</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="absolute top-2 right-2">
+                                        <input type="checkbox" class="w-5 h-5 text-primary bg-surface border-border rounded focus:ring-primary focus:ring-2 post-checkbox" />
+                                    </div>
+                                    <div class="mt-2">
+                                        <p class="text-sm text-text-secondary">2 weeks ago</p>
+                                    </div>
+                                </div>
+
+                                <!-- Post 6 -->
+                                <div class="relative group cursor-pointer media-item" data-post-id="6">
+                                    <div class="aspect-square rounded-lg overflow-hidden">
+                                        <img src="https://images.pixabay.com/photo/2016/03/27/18/10/bear-1283347_960_720.jpg" alt="Instagram Post" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=400&auto=format&fit=crop'; this.onerror=null;" />
+                                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                            <div class="text-white text-center">
+                                                <div class="flex items-center justify-center space-x-4 text-sm">
+                                                    <div class="flex items-center space-x-1">
+                                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                                        </svg>
+                                                        <span>967</span>
+                                                    </div>
+                                                    <div class="flex items-center space-x-1">
+                                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                                        </svg>
+                                                        <span>78</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="absolute top-2 right-2">
+                                        <input type="checkbox" class="w-5 h-5 text-primary bg-surface border-border rounded focus:ring-primary focus:ring-2 post-checkbox" />
+                                    </div>
+                                    <div class="mt-2">
+                                        <p class="text-sm text-text-secondary">3 weeks ago</p>
+                                    </div>
+                                </div>
+
+                                <!-- Post 7 -->
+                                <div class="relative group cursor-pointer media-item" data-post-id="7">
+                                    <div class="aspect-square rounded-lg overflow-hidden">
+                                        <img src="https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Instagram Post" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=400&auto=format&fit=crop'; this.onerror=null;" />
+                                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                            <div class="text-white text-center">
+                                                <div class="flex items-center justify-center space-x-4 text-sm">
+                                                    <div class="flex items-center space-x-1">
+                                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                                        </svg>
+                                                        <span>1.5K</span>
+                                                    </div>
+                                                    <div class="flex items-center space-x-1">
+                                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                                        </svg>
+                                                        <span>98</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="absolute top-2 right-2">
+                                        <input type="checkbox" class="w-5 h-5 text-primary bg-surface border-border rounded focus:ring-primary focus:ring-2 post-checkbox" />
+                                    </div>
+                                    <div class="mt-2">
+                                        <p class="text-sm text-text-secondary">3 weeks ago</p>
+                                    </div>
+                                </div>
+
+                                <!-- Post 8 -->
+                                <div class="relative group cursor-pointer media-item" data-post-id="8">
+                                    <div class="aspect-square rounded-lg overflow-hidden">
+                                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=400&auto=format&fit=crop" alt="Instagram Post" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://images.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg'; this.onerror=null;" />
+                                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                            <div class="text-white text-center">
+                                                <div class="flex items-center justify-center space-x-4 text-sm">
+                                                    <div class="flex items-center space-x-1">
+                                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                                        </svg>
+                                                        <span>634</span>
+                                                    </div>
+                                                    <div class="flex items-center space-x-1">
+                                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                                        </svg>
+                                                        <span>45</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="absolute top-2 right-2">
+                                        <input type="checkbox" class="w-5 h-5 text-primary bg-surface border-border rounded focus:ring-primary focus:ring-2 post-checkbox" />
+                                    </div>
+                                    <div class="mt-2">
+                                        <p class="text-sm text-text-secondary">1 month ago</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Selection Summary -->
+                            <div class="bg-surface/50 rounded-lg p-4 mb-6 w-full max-w-5xl mx-auto">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-2">
+                                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        </svg>
+                                        <span class="text-white font-medium" id="selection-count">0 posts selected</span>
+                                    </div>
+                                    <button class="text-text-secondary hover:text-white transition-colors text-sm" id="select-all-btn">
+                                        Select All
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Keyword Configuration -->
+                        <div id="step-2" class="step-content hidden">
+                            <div class="mb-6">
+                                <h3 class="text-2xl font-semibold text-white mb-2">Configure Keyword Triggers</h3>
+                                <p class="text-text-secondary">Define keywords and phrases that will trigger automated responses.</p>
+                            </div>
+
+                            <!-- Keyword Input -->
+                            <div class="mb-6">
+                                <label class="block text-white font-medium mb-2">Trigger Keywords</label>
+                                <div class="relative">
+                                    <input type="text" id="keyword-input" placeholder="Type a keyword and press Enter..." class="w-full px-4 py-3 bg-surface border border-border rounded-lg text-white placeholder-text-secondary focus:border-primary focus:outline-none transition-colors" />
+                                    <div class="absolute right-3 top-1/2 transform -translate-y-1/2 text-text-secondary">
+                                        <kbd class="px-2 py-1 text-xs bg-surface-light rounded">Enter</kbd>
+                                    </div>
+                                </div>
+                                <p class="text-text-secondary text-sm mt-2">Add keywords that will trigger automated responses when found in comments.</p>
+                            </div>
+
+                            <!-- Keywords List -->
+                            <div class="mb-6">
+                                <div class="flex flex-wrap gap-2" id="keywords-container">
+                                    <div class="flex items-center space-x-2 bg-primary/20 border border-primary/30 rounded-lg px-3 py-2 keyword-tag">
+                                        <span class="text-primary text-sm">amazing</span>
+                                        <button class="text-primary hover:text-white transition-colors remove-keyword" data-keyword="amazing">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="flex items-center space-x-2 bg-primary/20 border border-primary/30 rounded-lg px-3 py-2 keyword-tag">
+                                        <span class="text-primary text-sm">love this</span>
+                                        <button class="text-primary hover:text-white transition-colors remove-keyword" data-keyword="love this">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="flex items-center space-x-2 bg-primary/20 border border-primary/30 rounded-lg px-3 py-2 keyword-tag">
+                                        <span class="text-primary text-sm">beautiful</span>
+                                        <button class="text-primary hover:text-white transition-colors remove-keyword" data-keyword="beautiful">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Suggested Keywords -->
+                            <div class="mb-6">
+                                <h4 class="text-white font-medium mb-3">Suggested Keywords</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <button class="px-3 py-2 bg-surface border border-border rounded-lg text-text-secondary hover:text-white hover:border-primary transition-colors text-sm suggested-keyword" data-keyword="awesome">
+                                        awesome
+                                    </button>
+                                    <button class="px-3 py-2 bg-surface border border-border rounded-lg text-text-secondary hover:text-white hover:border-primary transition-colors text-sm suggested-keyword" data-keyword="gorgeous">
+                                        gorgeous
+                                    </button>
+                                    <button class="px-3 py-2 bg-surface border border-border rounded-lg text-text-secondary hover:text-white hover:border-primary transition-colors text-sm suggested-keyword" data-keyword="stunning">
+                                        stunning
+                                    </button>
+                                    <button class="px-3 py-2 bg-surface border border-border rounded-lg text-text-secondary hover:text-white hover:border-primary transition-colors text-sm suggested-keyword" data-keyword="perfect">
+                                        perfect
+                                    </button>
+                                    <button class="px-3 py-2 bg-surface border border-border rounded-lg text-text-secondary hover:text-white hover:border-primary transition-colors text-sm suggested-keyword" data-keyword="incredible">
+                                        incredible
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Keyword Settings -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-white font-medium mb-2">Match Type</label>
+                                    <select class="w-full px-4 py-3 bg-surface border border-border rounded-lg text-white focus:border-primary focus:outline-none transition-colors">
+                                        <option value="exact">Exact Match</option>
+                                        <option value="contains">Contains Keyword</option>
+                                        <option value="starts">Starts With</option>
+                                        <option value="ends">Ends With</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-white font-medium mb-2">Case Sensitivity</label>
+                                    <select class="w-full px-4 py-3 bg-surface border border-border rounded-lg text-white focus:border-primary focus:outline-none transition-colors">
+                                        <option value="insensitive">Case Insensitive</option>
+                                        <option value="sensitive">Case Sensitive</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Response Configuration -->
+                        <div id="step-3" class="step-content hidden">
+                            <div class="mb-6">
+                                <h3 class="text-2xl font-semibold text-white mb-2">Configure Automated Responses</h3>
+                                <p class="text-text-secondary">Create personalized automated responses for your keyword triggers.</p>
+                            </div>
+
+                            <!-- Response Templates -->
+                            <div class="mb-6">
+                                <label class="block text-white font-medium mb-2">Response Messages</label>
+                                <div class="space-y-4" id="responses-container">
+                                    <div class="response-item bg-surface/50 rounded-lg p-4">
+                                        <div class="flex items-center justify-between mb-3">
+                                            <span class="text-white font-medium">Response</span>
+                                            <button class="text-text-secondary hover:text-error transition-colors remove-response">
+                                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <textarea class="w-full px-4 py-3 bg-surface border border-border rounded-lg text-white placeholder-text-secondary focus:border-primary focus:outline-none transition-colors resize-none" rows="3" placeholder="Thank you so much! 😊 I'm glad you liked it!">Thank you so much! 😊 I'm glad you liked it!</textarea>
+                                        <div class="flex items-center justify-between mt-3">
+                                            <div class="flex items-center space-x-4">
+                                                <button class="text-text-secondary hover:text-primary transition-colors text-sm flex items-center space-x-1">
+                                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 0h10m-10 0V3a1 1 0 00-1 1v16a1 1 0 001 1h12a1 1 0 001-1V4a1 1 0 00-1-1m-1 0V2">
+                                                       <span>Add Variable</span>
+                                                </path></svg></button>
+                                                <button class="text-text-secondary hover:text-primary transition-colors text-sm flex items-center space-x-1">
+                                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h8m2-10v18a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2h8l4 4z"/>
+                                                    </svg>
+                                                    <span>Add Emoji</span>
+                                                </button>
+                                            </div>
+                                            <span class="text-text-secondary text-sm">45/280</span>
+                                        </div>
+                                    </div>
+
+                                    </div>
+                                </div>
+
+                                <button class="mt-4 w-full px-4 py-3 border border-border rounded-lg text-text-secondary hover:text-white hover:border-primary transition-colors flex items-center justify-center space-x-2" id="add-response-btn">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                                    </svg>
+                                    <span>Add Another Response</span>
+                                </button>
+                            </div>
+
+                            <!-- Response Settings -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label class="block text-white font-medium mb-2">Response Timing</label>
+                                    <select class="w-full px-4 py-3 bg-surface border border-border rounded-lg text-white focus:border-primary focus:outline-none transition-colors">
+                                        <option value="immediate">Immediate</option>
+                                        <option value="1-5">1-5 minutes</option>
+                                        <option value="5-15">5-15 minutes</option>
+                                        <option value="15-30">15-30 minutes</option>
+                                        <option value="1-2">1-2 hours</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-white font-medium mb-2">Response Selection</label>
+                                    <select class="w-full px-4 py-3 bg-surface border border-border rounded-lg text-white focus:border-primary focus:outline-none transition-colors">
+                                        <option value="random">Random Response</option>
+                                        <option value="sequential">Sequential Order</option>
+                                        <option value="weighted">Weighted Random</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Advanced Settings -->
+                            <div class="bg-surface/50 rounded-lg p-4">
+                                <h4 class="text-white font-medium mb-4">Advanced Settings</h4>
+                                <div class="space-y-4">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <span class="text-white">Limit responses per user</span>
+                                            <p class="text-text-secondary text-sm">Prevent spam by limiting responses to the same user</p>
+                                        </div>
+                                        <label class="relative inline-flex items-center cursor-pointer">
+                                            <input type="checkbox" class="sr-only peer" checked />
+                                            <div class="w-11 h-6 bg-surface-light peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                                        </label>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <span class="text-white">Skip verified accounts</span>
+                                            <p class="text-text-secondary text-sm">Don't auto-reply to verified Instagram accounts</p>
+                                        </div>
+                                        <label class="relative inline-flex items-center cursor-pointer">
+                                            <input type="checkbox" class="sr-only peer" />
+                                            <div class="w-11 h-6 bg-surface-light peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                                        </label>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <span class="text-white">Enable smart filtering</span>
+                                            <p class="text-text-secondary text-sm">Use AI to filter inappropriate comments</p>
+                                        </div>
+                                        <label class="relative inline-flex items-center cursor-pointer">
+                                            <input type="checkbox" class="sr-only peer" checked />
+                                            <div class="w-11 h-6 bg-surface-light peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Navigation Buttons -->
+                        <div class="flex items-center justify-between mt-8 pt-6 border-t border-border w-full max-w-5xl mx-auto">
+                            <button class="px-6 py-3 border border-border rounded-lg text-text-secondary hover:text-white hover:border-primary transition-colors" id="prev-btn" disabled>
+                                <div class="flex items-center space-x-2">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                                    </svg>
+                                    <span>Previous</span>
+                                </div>
+                            </button>
+
+                            <div class="flex items-center space-x-4">
+                                <button class="px-6 py-3 border border-border rounded-lg text-text-secondary hover:text-white hover:border-primary transition-colors">
+                                    Save Draft
+                                </button>
+                                <button class="px-6 py-3 bg-gradient-to-r from-primary to-secondary rounded-lg text-white font-medium hover:shadow-glow transition-all duration-300" id="next-btn">
+                                    <div class="flex items-center space-x-2">
+                                        <span>Next Step</span>
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                        </svg>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               
+
+                   
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Preview Modal -->
+    <div id="preview-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="glass rounded-2xl p-6 max-w-2xl w-full max-h-[80vh] overflow-y-auto">
+            <div class="flex items-center justify-between mb-6">
+                <h3 class="text-xl font-semibold text-white">Automation Preview</h3>
+                <button class="text-text-secondary hover:text-white transition-colors" id="close-preview">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="space-y-6">
+                <div>
+                    <h4 class="text-white font-medium mb-3">Selected Posts</h4>
+                    <div class="grid grid-cols-3 gap-2" id="preview-posts">
+                        <!-- Preview posts will be populated here -->
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-medium mb-3">Trigger Keywords</h4>
+                    <div class="flex flex-wrap gap-2" id="preview-keywords">
+                        <!-- Preview keywords will be populated here -->
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-medium mb-3">Automated Responses</h4>
+                    <div class="space-y-3" id="preview-responses">
+                        <!-- Preview responses will be populated here -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex items-center justify-end space-x-4 mt-6 pt-6 border-t border-border">
+                <button class="px-6 py-3 border border-border rounded-lg text-text-secondary hover:text-white hover:border-primary transition-colors" id="close-preview-btn">
+                    Close
+                </button>
+                <button class="px-6 py-3 bg-gradient-to-r from-primary to-secondary rounded-lg text-white font-medium hover:shadow-glow transition-all duration-300">
+                    Activate Campaign
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Media Selection Next Step Popup -->
+    <div id="media-selection-popup" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="glass rounded-2xl p-6 max-w-md w-full text-center">
+            <div class="mb-6 flex flex-col items-center">
+                <div class="w-16 h-16 bg-success/20 rounded-full flex items-center justify-center mb-4">
+                    <svg class="w-8 h-8 text-success" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">Media Selected!</h3>
+                <p class="text-text-secondary mb-3">You've selected <span id="popup-selected-count">1</span> post(s). Ready to continue?</p>
+                <div class="flex mb-4">
+                    <div id="popup-image-container" class="w-20 h-20 rounded-md overflow-hidden mr-3 flex-shrink-0">
+                        <img id="popup-selected-image" src="" alt="Selected post" class="w-full h-full object-cover">
+                    </div>
+                    <div id="popup-caption-display" class="bg-surface/40 p-3 rounded-lg text-white text-sm flex-1 overflow-y-auto">
+                        <p id="popup-selected-caption" class="text-left"></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex justify-center space-x-4">
+                <button id="popup-select-more" class="px-6 py-3 border border-border rounded-lg text-text-secondary hover:text-white hover:border-primary transition-colors">
+                    Select More
+                </button>
+                <button id="popup-next-step" class="px-6 py-3 bg-gradient-to-r from-primary to-secondary rounded-lg text-white font-medium hover:shadow-glow transition-all duration-300">
+                    Continue to Keywords
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
     <script>
-        const getMediaWebhookURL = 'https://n8n.gamkers.in/webhook/get-media-nowful';
-        const commentWebhookURL = 'https://n8n.gamkers.in/webhook/save-keywords-nowful';
-        console.log('Get Media Webhook URL:', getMediaWebhookURL);
-        console.log('Comment Webhook URL:', commentWebhookURL);
+        // Notification function
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `fixed bottom-6 right-6 px-6 py-4 rounded-lg shadow-xl z-50 flex items-center space-x-3 transition-all duration-300 transform translate-y-0 opacity-100`;
+            
+            // Set background color based on type
+            if (type === 'success') {
+                notification.classList.add('bg-success/20', 'text-success', 'border', 'border-success/30');
+            } else if (type === 'error') {
+                notification.classList.add('bg-error/20', 'text-error', 'border', 'border-error/30');
+            } else {
+                notification.classList.add('bg-primary/20', 'text-primary', 'border', 'border-primary/30');
+            }
+            
+            notification.innerHTML = `
+                <div>${message}</div>
+                <button class="text-current hover:text-white transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Auto-dismiss after 3 seconds
+            setTimeout(() => {
+                notification.classList.add('opacity-0', 'translate-y-6');
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 3000);
+            
+            // Dismiss on click
+            notification.querySelector('button').addEventListener('click', () => {
+                notification.classList.add('opacity-0', 'translate-y-6');
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            });
+        }
+
+        // Webhook Configuration
+        const WEBHOOK_BASE_URL = 'https://n8n.gamkers.in/webhook';
+         // Show media selection popup
+        function showMediaSelectionPopup() {
+            // Update the selected count in the popup
+            const popupSelectedCount = document.getElementById('popup-selected-count');
+            popupSelectedCount.textContent = selectedPosts.length;
+            
+            // Get caption of the selected post and display it
+            const popupSelectedCaption = document.getElementById('popup-selected-caption');
+            const popupCaptionDisplay = document.getElementById('popup-caption-display');
+            
+            // If there's exactly one post selected, show its caption
+            if (selectedPosts.length === 1) {
+                const selectedPostId = selectedPosts[0];
+                const selectedPost = mediaData.find(item => String(item.id) === selectedPostId);
+                
+                if (selectedPost) {
+                    // Extract caption text
+                    let captionText = selectedPost.caption || selectedPost.caption_text || 
+                        (selectedPost.edge_media_to_caption && 
+                        selectedPost.edge_media_to_caption.edges && 
+                        selectedPost.edge_media_to_caption.edges[0] && 
+                        selectedPost.edge_media_to_caption.edges[0].node.text);
+                        
+                    popupSelectedCaption.textContent = captionText || "No caption available";
+                    popupCaptionDisplay.style.display = "block";
+                    
+                    // Update image
+                    const popupSelectedImage = document.getElementById('popup-selected-image');
+                    const popupImageContainer = document.getElementById('popup-image-container');
+                    const imageUrl = selectedPost.thumbnail_url || selectedPost.media_url || 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=400';
+                    
+                    popupSelectedImage.src = imageUrl;
+                    popupSelectedImage.onerror = function() {
+                        this.src = 'https://images.unsplash.com/photo-1611262588024-d12430b98920?q=80&w=400&auto=format&fit=crop';
+                    };
+                    popupImageContainer.style.display = "block";
+                } else {
+                    popupSelectedCaption.textContent = "Caption not available";
+                    popupCaptionDisplay.style.display = "block";
+                    document.getElementById('popup-image-container').style.display = "none";
+                }
+            } 
+            // If multiple posts selected, show a message instead of specific caption
+            else if (selectedPosts.length > 1) {
+                popupSelectedCaption.textContent = "Multiple posts selected. View captions in the media grid.";
+                popupCaptionDisplay.style.display = "block";
+                document.getElementById('popup-image-container').style.display = "none";
+            } 
+            // If no posts selected (shouldn't happen), hide caption display
+            else {
+                popupCaptionDisplay.style.display = "none";
+                document.getElementById('popup-image-container').style.display = "none";
+            }
+            
+            // Get the popup element
+            const mediaSelectionPopup = document.getElementById('media-selection-popup');
+            
+            // Make sure popup is positioned properly
+            mediaSelectionPopup.classList.remove('hidden');
+            mediaSelectionPopup.style.display = 'flex';
+            
+            // Get the button elements
+            const popupNextBtn = document.getElementById('popup-next-step');
+            const popupSelectMoreBtn = document.getElementById('popup-select-more');
+            
+            // Create new buttons to ensure clean event handlers
+            const newNextBtn = document.createElement('button');
+            newNextBtn.id = 'popup-next-step';
+            newNextBtn.className = popupNextBtn.className;
+            newNextBtn.innerHTML = popupNextBtn.innerHTML;
+            
+            const newSelectMoreBtn = document.createElement('button');
+            newSelectMoreBtn.id = 'popup-select-more';
+            newSelectMoreBtn.className = popupSelectMoreBtn.className;
+            newSelectMoreBtn.innerHTML = popupSelectMoreBtn.innerHTML;
+            
+            // Replace the old buttons with the new ones
+            popupNextBtn.parentNode.replaceChild(newNextBtn, popupNextBtn);
+            popupSelectMoreBtn.parentNode.replaceChild(newSelectMoreBtn, popupSelectMoreBtn);
+            
+            // Add new event listeners
+            newNextBtn.addEventListener('click', function() {
+                // Hide popup completely
+                mediaSelectionPopup.classList.add('hidden');
+                mediaSelectionPopup.style.display = 'none';
+                
+                // Use a timeout to ensure UI updates properly
+                setTimeout(() => {
+                    // Hide all step contents first
+                    document.querySelectorAll('.step-content').forEach(content => {
+                        content.classList.add('hidden');
+                    });
+                    
+                    // Update to step 2
+                    currentStep = 2;
+                    
+                    // Show step 2 content
+                    const step2Content = document.getElementById('step-2');
+                    if (step2Content) {
+                        step2Content.classList.remove('hidden');
+                    }
+                    
+                    // Update indicators and progress
+                    updateStep(currentStep);
+                    
+                    // Show notification
+                    showNotification('✅ Moving to keyword setup...', 'success');
+                }, 100);
+            });
+            
+            newSelectMoreBtn.addEventListener('click', function() {
+                // Hide popup completely
+                mediaSelectionPopup.classList.add('hidden');
+                mediaSelectionPopup.style.display = 'none';
+            });
+            
+            // Close popup when clicking outside
+            mediaSelectionPopup.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    mediaSelectionPopup.classList.add('hidden');
+                    mediaSelectionPopup.style.display = 'none';
+                }
+            });
+            
+            // Close popup when pressing ESC
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && !mediaSelectionPopup.classList.contains('hidden')) {
+                    mediaSelectionPopup.classList.add('hidden');
+                    mediaSelectionPopup.style.display = 'none';
+                }
+            });
+        }
+        
+        let mediaData = [];
+        let selectedPosts = [];
+        let keywords = []; // <-- Start with empty array, will be filled by user input
+        let responseCount = 2;
+        let currentStep = 1;
+        const totalSteps = 3;
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Load Instagram media from webhook
+        async function loadInstagramMedia() {
+            const loadingOverlay = document.createElement('div');
+            loadingOverlay.id = 'loading-overlay';
+            loadingOverlay.className = 'fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center';
+            loadingOverlay.innerHTML = `
+                <div class="glass rounded-2xl p-8 flex flex-col items-center space-y-4">
+                    <div class="w-12 h-12 border-4 border-primary/30 border-t-primary rounded-full animate-spin"></div>
+                    <div class="text-white font-medium">Loading Instagram media...</div>
+                </div>
+            `;
+            document.body.appendChild(loadingOverlay);
+            
+            try {
+                const response = await fetch(`${WEBHOOK_BASE_URL}/get-media-nowful`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                
+                if (data.success && data.media) {
+                    mediaData = data.media;
+                    renderMediaGrid(data.media);
+                    showNotification('✅ Media loaded successfully!', 'success');
+                } else {
+                    throw new Error(data.error || 'Failed to load media');
+                }
+                
+            } catch (error) {
+                console.error('Error loading media:', error);
+                showNotification(`❌ Error loading media: ${error.message}`, 'error');
+            } finally {
+                if (document.getElementById('loading-overlay')) {
+                    document.getElementById('loading-overlay').remove();
+                }
+            }
+        }
+
+        // Helper function for Instagram data
+        function formatNumber(num) {
+            if (num >= 1000000) {
+                return (num / 1000000).toFixed(1) + 'M';
+            }
+            if (num >= 1000) {
+                return (num / 1000).toFixed(1) + 'K';
+            }
+            return num;
+        }
+        
+        function renderMediaGrid(media) {
+            const mediaGrid = document.querySelector('.grid.grid-cols-2.md\\:grid-cols-4.gap-4.mb-6');
+            if (!mediaGrid) return;
+            
+            mediaGrid.innerHTML = '';
+            
+            media.forEach((item, index) => {
+                const mediaItem = document.createElement('div');
+                mediaItem.className = 'relative group cursor-pointer media-item';
+                mediaItem.dataset.postId = item.id;
+                
+                // Calculate engagement metrics
+                const likes = item.like_count || 0;
+                const comments = item.comments_count || 0;
+                
+                // Extract caption text
+                let caption = item.caption || item.caption_text || 
+                    (item.edge_media_to_caption && 
+                    item.edge_media_to_caption.edges && 
+                    item.edge_media_to_caption.edges[0] && 
+                    item.edge_media_to_caption.edges[0].node.text) || 
+                    "No caption available";
+                
+                // Truncate very long captions for display
+                if (caption.length > 150) {
+                    caption = caption.substring(0, 147) + "...";
+                }
+                
+                // No timestamp needed anymore - using caption instead
+                
+                mediaItem.innerHTML = `
+                    <div class="aspect-square rounded-lg overflow-hidden">
+                        <img src="${item.thumbnail_url || item.media_url || 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=400'}" 
+                             alt="Instagram Post" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
+                             onerror="this.src='https://images.unsplash.com/photo-1611262588024-d12430b98920?q=80&w=400&auto=format&fit=crop'; this.onerror=null;" />
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-white text-center">
+                                <div class="flex items-center justify-center space-x-4 text-sm">
+                                    <div class="flex items-center space-x-1">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                        </svg>
+                                        <span>${formatNumber(likes)}</span>
+                                    </div>
+                                    <div class="flex items-center space-x-1">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                        </svg>
+                                        <span>${formatNumber(comments)}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-2 right-2">
+                            <input type="checkbox" class="w-5 h-5 text-primary bg-surface border-border rounded focus:ring-primary focus:ring-2 post-checkbox" />
+                        </div>
+                        <div class="mt-2 px-2">
+                            <p class="text-sm text-text-secondary line-clamp-2 h-10 overflow-hidden font-medium">${caption}</p>
+                        </div>
+                    `;
+                
+                mediaGrid.appendChild(mediaItem);
+            });
+            
+            // Reinitialize media selection functionality
+            initializeMediaSelection();
+        }
+
+        // Save automation configuration to webhook
+        async function saveAutomationConfig() {
+            const loadingOverlay = document.createElement('div');
+            loadingOverlay.id = 'saving-overlay';
+            loadingOverlay.className = 'fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center';
+            loadingOverlay.innerHTML = `
+                <div class="glass rounded-2xl p-8 flex flex-col items-center space-y-4">
+                    <div class="w-12 h-12 border-4 border-primary/30 border-t-primary rounded-full animate-spin"></div>
+                    <div class="text-white font-medium">Saving automation configuration...</div>
+                </div>
+            `;
+            document.body.appendChild(loadingOverlay);
+            
+            try {
+                // Get response messages
+                const responseItems = document.querySelectorAll('.response-item textarea');
+                const responses = Array.from(responseItems).map(textarea => textarea.value.trim()).filter(resp => resp);
+                
+                // Get automation settings
+                const matchType = document.querySelector('select[value="exact"]')?.value || 'contains';
+                const caseSensitive = document.querySelector('select[value="insensitive"]')?.value === 'sensitive';
+                const timing = document.querySelector('select option[value="immediate"]')?.parentElement.value || 'immediate';
+                const responseSelection = document.querySelector('select option[value="random"]')?.parentElement.value || 'random';
+                
+                // Get advanced settings
+                const limitResponses = document.querySelector('input[type="checkbox"]:checked') !== null;
+                const skipVerified = document.querySelectorAll('input[type="checkbox"]')[1]?.checked || false;
+                const smartFiltering = document.querySelectorAll('input[type="checkbox"]')[2]?.checked || true;
+                
+                const configData = {
+                    selectedPosts: selectedPosts,
+                    keywords: keywords,
+                    responses: responses,
+                    settings: {
+                        matchType,
+                        caseSensitive,
+                        timing,
+                        responseSelection,
+                        limitResponses,
+                        skipVerified,
+                        smartFiltering
+                    }
+                };
+
+                const response = await fetch(`${WEBHOOK_BASE_URL}/save-automation-config`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(configData)
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    showNotification('🎉 Automation configuration saved successfully!', 'success');
+                    return true;
+                } else {
+                    throw new Error(result.error || 'Failed to save configuration');
+                }
+                
+            } catch (error) {
+                console.error('Error saving configuration:', error);
+                showNotification(`❌ Error saving configuration: ${error.message}`, 'error');
+                return false;
+            } finally {
+                if (document.getElementById('saving-overlay')) {
+                    document.getElementById('saving-overlay').remove();
+                }
+            }
+        }
+
+        // Initialize media selection functionality
+        function initializeMediaSelection() {
+            const mediaItems = document.querySelectorAll('.media-item');
+            const postCheckboxes = document.querySelectorAll('.post-checkbox');
+            const selectionCount = document.getElementById('selection-count');
+            const selectAllBtn = document.getElementById('select-all-btn');
+            const summaryPosts = document.getElementById('summary-posts');
+
+            function updateSelectionCount() {
+                const count = selectedPosts.length;
+                selectionCount.textContent = `${count} post${count !== 1 ? 's' : ''} selected`;
+                summaryPosts.textContent = count;
+                
+                if (count === mediaItems.length) {
+                    selectAllBtn.textContent = 'Deselect All';
+                } else {
+                    selectAllBtn.textContent = 'Select All';
+                }
+            }
+
+            // Handle individual post selection
+            mediaItems.forEach((item, index) => {
+                const checkbox = item.querySelector('.post-checkbox');
+                const postId = String(item.dataset.postId); // Ensure string
+
+                // Helper to add/remove postId from selectedPosts
+                function setSelected(checked) {
+                    if (checked) {
+                        if (!selectedPosts.includes(postId)) {
+                            selectedPosts.push(postId);
+                        }
+                        item.classList.add('ring-2', 'ring-primary');
+                        
+                        // Show the selection popup if we're on step 1
+                        if (currentStep === 1) {
+                            showMediaSelectionPopup();
+                        }
+                    } else {
+                        selectedPosts = selectedPosts.filter(id => id !== postId);
+                        item.classList.remove('ring-2', 'ring-primary');
+                    }
+                    updateSelectionCount();
+                }
+
+                item.addEventListener('click', function(e) {
+                    if (e.target.type !== 'checkbox') {
+                        checkbox.checked = !checkbox.checked;
+                    }
+                    setSelected(checkbox.checked);
+                });
+
+                checkbox.addEventListener('change', function() {
+                    setSelected(this.checked);
+                });
+            });
+
+            // Select all functionality
+            selectAllBtn.addEventListener('click', function() {
+                const allSelected = selectedPosts.length === mediaItems.length;
+                if (allSelected) {
+                    // Deselect all
+                    selectedPosts = [];
+                    mediaItems.forEach(item => {
+                        item.querySelector('.post-checkbox').checked = false;
+                        item.classList.remove('ring-2', 'ring-primary');
+                    });
+                } else {
+                    // Select all
+                    selectedPosts = [];
+                    mediaItems.forEach(item => {
+                        const postId = String(item.dataset.postId);
+                        if (!selectedPosts.includes(postId)) {
+                            selectedPosts.push(postId);
+                        }
+                        item.querySelector('.post-checkbox').checked = true;
+                        item.classList.add('ring-2', 'ring-primary');
+                    });
+                    
+                    // If on step 1, show the selection popup
+                    if (currentStep === 1) {
+                        showMediaSelectionPopup();
+                    }
+                }
+                updateSelectionCount();
+            });
+
+            updateSelectionCount();
+        }
+
+        // Helper to get the latest selected media_id (first in selectedPosts or last selected)
+        function getSelectedMediaId() {
+            // If multiple posts are selected, pick the first one (or change logic as needed)
+            return selectedPosts.length > 0 ? selectedPosts[0] : '';
+        }
+
+        // Helper to get keywords as a list (array)
+        function getKeywordsList() {
+            return keywords;
+        }
+
+        // Helper to get the first automated message (or all, as needed)
+        function getAutomatedMessage() {
+            const responsesContainer = document.getElementById('responses-container');
+            const responseItems = responsesContainer.querySelectorAll('.response-item textarea');
+            // Use the first non-empty response as the automated message
+            for (let textarea of responseItems) {
+                if (textarea.value.trim()) return textarea.value.trim();
+            }
+            return '';
+        }
+
+        // Activate Campaign handler
+        function activateCampaign() {
+            const media_id = getSelectedMediaId();
+            const keywordsList = getKeywordsList();
+            const automated_message = getAutomatedMessage();
+
+            if (!media_id || !keywordsList.length || !automated_message) {
+                showNotification('Please select a post, add at least one keyword, and provide an automated message.', 'error');
+                return;
+            }
+
+            const payload = {
+                media_id,
+                keywords: keywordsList,
+                automated_message
+            };
+
+            // Show loading overlay
+            const loadingOverlay = document.createElement('div');
+            loadingOverlay.id = 'activate-overlay';
+            loadingOverlay.className = 'fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center';
+            loadingOverlay.innerHTML = `
+                <div class="glass rounded-2xl p-8 flex flex-col items-center space-y-4">
+                    <div class="w-12 h-12 border-4 border-primary/30 border-t-primary rounded-full animate-spin"></div>
+                    <div class="text-white font-medium">Activating campaign...</div>
+                </div>
+            `;
+            document.body.appendChild(loadingOverlay);
+
+            fetch('https://n8n.gamkers.in/webhook/save-keywords-nowful', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+            .then(res => res.ok ? res.json() : Promise.reject(res))
+            .then(() => {
+                showNotification('🎉 Campaign activated successfully!', 'success');
+                // Optionally close the modal
+                document.getElementById('preview-modal').classList.add('hidden');
+            })
+            .catch(() => {
+                showNotification('❌ Failed to activate campaign.', 'error');
+            })
+            .finally(() => {
+                if (document.getElementById('activate-overlay')) {
+                    document.getElementById('activate-overlay').remove();
+                }
+            });
+        }
+
+        // Attach handler to Activate Campaign button
+        document.addEventListener('DOMContentLoaded', function() {
+            loadInstagramMedia();
+            
+            // Step management
+            const stepContents = document.querySelectorAll('.step-content');
+            const stepIndicators = document.querySelectorAll('.step-indicator');
+            const stepLabels = document.querySelectorAll('.step-label');
+            const progressBar = document.getElementById('progress-bar');
+            const progressText = document.getElementById('progress-text');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+
+            function updateStep(step) {
+                // Hide all step contents
+                stepContents.forEach(content => content.classList.add('hidden'));
+                
+                // Show current step content
+                document.getElementById(`step-${step}`).classList.remove('hidden');
+                
+                // Scroll to top of content area to ensure it's visible
+                const stepProgressBar = document.querySelector('.glass.rounded-2xl.p-6.mb-8');
+                if (stepProgressBar) {
+                    stepProgressBar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                } else {
+                    // Fallback if specific element not found
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+                
+                // Update step indicators
+                stepIndicators.forEach((indicator, index) => {
+                    const stepNum = index + 1;
+                    if (stepNum < step) {
+                        indicator.classList.remove('active');
+                        indicator.classList.add('completed');
+                        indicator.innerHTML = '<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>';
+                        indicator.classList.add('bg-success', 'text-white');
+                        indicator.classList.remove('bg-primary', 'bg-surface-light', 'border', 'border-border', 'text-text-secondary');
+                    } else if (stepNum === step) {
+                        indicator.classList.add('active');
+                        indicator.classList.remove('completed');
+                        indicator.textContent = stepNum;
+                        indicator.classList.add('bg-primary', 'text-white');
+                        indicator.classList.remove('bg-success', 'bg-surface-light', 'border', 'border-border', 'text-text-secondary');
+                    } else {
+                        indicator.classList.remove('active', 'completed');
+                        indicator.textContent = stepNum;
+                        indicator.classList.add('bg-surface-light', 'border', 'border-border', 'text-text-secondary');
+                        indicator.classList.remove('bg-primary', 'bg-success', 'text-white');
+                    }
+                });
+
+                // Update step labels
+                stepLabels.forEach((label, index) => {
+                    const stepNum = index + 1;
+                    if (stepNum <= step) {
+                        label.classList.add('text-white');
+                        label.classList.remove('text-text-secondary');
+                    } else {
+                        label.classList.add('text-text-secondary');
+                        label.classList.remove('text-white');
+                    }
+                });
+                
+                // Update progress bar
+                const progress = (step / totalSteps) * 100;
+                progressBar.style.width = `${progress}%`;
+                progressText.textContent = `Step ${step} of ${totalSteps}`;
+                
+                // Update navigation buttons
+                prevBtn.disabled = step === 1;
+                if (step === 1) {
+                    prevBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                } else {
+                    prevBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                }
+                
+                if (step === totalSteps) {
+                    nextBtn.innerHTML = '<div class="flex items-center space-x-2"><span>Preview & Activate</span><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></div>';
+                } else {
+                    nextBtn.innerHTML = '<div class="flex items-center space-x-2"><span>Next Step</span><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></div>';
+                }
+            }
+
+            // Navigation button handlers
+            prevBtn.addEventListener('click', function() {
+                if (currentStep > 1) {
+                    currentStep--;
+                    updateStep(currentStep);
+                }
+            });
+
+            nextBtn.addEventListener('click', function() {
+                if (currentStep < totalSteps) {
+                    currentStep++;
+                    updateStep(currentStep);
+                } else {
+                    // Show preview modal
+                    showPreview();
+                }
+            });
+
+            // Keyword management
+            const keywordInput = document.getElementById('keyword-input');
+            const keywordsContainer = document.getElementById('keywords-container');
+            const summaryKeywords = document.getElementById('summary-keywords');
+            const suggestedKeywords = document.querySelectorAll('.suggested-keyword');
+
+            function updateKeywordsDisplay() {
+                keywordsContainer.innerHTML = '';
+                keywords.forEach(keyword => {
+                    const keywordTag = document.createElement('div');
+                    keywordTag.className = 'flex items-center space-x-2 bg-primary/20 border border-primary/30 rounded-lg px-3 py-2 keyword-tag';
+                    keywordTag.innerHTML = `
+                        <span class="text-primary text-sm">${keyword}</span>
+                        <button class="text-primary hover:text-white transition-colors remove-keyword" data-keyword="${keyword}">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                        </button>
+                    `;
+                    keywordsContainer.appendChild(keywordTag);
+                });
+                
+                summaryKeywords.textContent = keywords.length;
+                
+                // Add remove functionality
+                document.querySelectorAll('.remove-keyword').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const keyword = this.dataset.keyword;
+                        keywords = keywords.filter(k => k !== keyword);
+                        updateKeywordsDisplay();
+                    });
+                });
+            }
+
+            function addKeyword(keyword) {
+                if (keyword && !keywords.includes(keyword.toLowerCase())) {
+                    keywords.push(keyword.toLowerCase());
+                    updateKeywordsDisplay();
+                    return true;
+                }
+                return false;
+            }
+
+            // Keyword input handler
+            keywordInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    const keyword = this.value.trim();
+                    if (addKeyword(keyword)) {
+                        this.value = '';
+                    }
+                }
+            });
+
+            // Suggested keywords
+            suggestedKeywords.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const keyword = this.dataset.keyword;
+                    if (addKeyword(keyword)) {
+                        this.style.opacity = '0.5';
+                        this.disabled = true;
+                    }
+                });
+            });
+
+            // Response management
+            const responsesContainer = document.getElementById('responses-container');
+            const addResponseBtn = document.getElementById('add-response-btn');
+            const summaryResponses = document.getElementById('summary-responses');
+
+            function updateResponseCount() {
+                const responses = responsesContainer.querySelectorAll('.response-item');
+                responseCount = responses.length;
+                summaryResponses.textContent = responseCount;
+            }
+
+            function addRemoveResponseHandlers() {
+                document.querySelectorAll('.remove-response').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        if (responseCount > 1) {
+                            this.closest('.response-item').remove();
+                            updateResponseCount();
+                        }
+                    });
+                });
+            }
+
+            addResponseBtn.addEventListener('click', function() {
+                responseCount++;
+                const responseItem = document.createElement('div');
+                responseItem.className = 'response-item bg-surface/50 rounded-lg p-4';
+                responseItem.innerHTML = `
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-white font-medium">Response ${responseCount}</span>
+                        <button class="text-text-secondary hover:text-error transition-colors remove-response">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <textarea class="w-full px-4 py-3 bg-surface border border-border rounded-lg text-white placeholder-text-secondary focus:border-primary focus:outline-none transition-colors resize-none" rows="3" placeholder="Enter your response message..."></textarea>
+                    <div class="flex items-center justify-between mt-3">
+                        <div class="flex items-center space-x-4">
+                            <button class="text-text-secondary hover:text-primary transition-colors text-sm flex items-center space-x-1">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 0h10m-10 0V3a1 1 0 00-1 1v16a1 1 0 001 1h12a1 1 0 001-1V4a1 1 0 00-1-1m-1 0V2"></span>
+                                <span>Add Variable</span>
+                            </button>
+                            <button class="text-text-secondary hover:text-primary transition-colors text-sm flex items-center space-x-1">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h8m2-10v18a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2h8l4 4z"></path>
+                                </svg>
+                                <span>Add Emoji</span>
+                            </button>
+                        </div>
+                        <span class="text-text-secondary text-sm">0/280</span>
+                    </div>
+                `;
+                responsesContainer.appendChild(responseItem);
+                addRemoveResponseHandlers();
+                updateResponseCount();
+            });
+
+            // Preview functionality
+            const previewModal = document.getElementById('preview-modal');
+            const closePreview = document.getElementById('close-preview');
+            const closePreviewBtn = document.getElementById('close-preview-btn');
+
+            function showPreview() {
+                // Populate preview content
+                const previewPosts = document.getElementById('preview-posts');
+                const previewKeywords = document.getElementById('preview-keywords');
+                const previewResponses = document.getElementById('preview-responses');
+                
+                // Clear previous content
+                previewPosts.innerHTML = '';
+                previewKeywords.innerHTML = '';
+                previewResponses.innerHTML = '';
+                
+                // Add selected posts
+                selectedPosts.forEach(postId => {
+                    const originalPost = document.querySelector(`[data-post-id="${postId}"]`);
+                    const img = originalPost.querySelector('img');
+                    const postPreview = document.createElement('div');
+                    postPreview.className = 'aspect-square rounded-lg overflow-hidden';
+                    postPreview.innerHTML = `<img src="${img.src}" alt="Selected Post" class="w-full h-full object-cover">`;
+                    previewPosts.appendChild(postPreview);
+                });
+                
+                // Add keywords
+                keywords.forEach(keyword => {
+                    const keywordTag = document.createElement('span');
+                    keywordTag.className = 'px-3 py-1 bg-primary/20 border border-primary/30 rounded-full text-primary text-sm';
+                    keywordTag.textContent = keyword;
+                    previewKeywords.appendChild(keywordTag);
+                });
+                
+                // Add responses
+                const responseItems = responsesContainer.querySelectorAll('.response-item textarea');
+                responseItems.forEach((textarea, index) => {
+                    const responsePreview = document.createElement('div');
+                    responsePreview.className = 'bg-surface/50 rounded-lg p-3';
+                    responsePreview.innerHTML = `
+                        <div class="text-text-secondary text-sm mb-1">Response ${index + 1}</div>
+                        <div class="text-white">${textarea.value || 'No message entered'}</div>
+                    `;
+                    previewResponses.appendChild(responsePreview);
+                });
+                
+                previewModal.classList.remove('hidden');
+
+                // Attach Activate Campaign handler every time modal is shown
+                const activateBtn = previewModal.querySelector('button.bg-gradient-to-r');
+                if (activateBtn) {
+                    // Remove previous click handlers by cloning
+                    const newBtn = activateBtn.cloneNode(true);
+                    activateBtn.parentNode.replaceChild(newBtn, activateBtn);
+                    newBtn.addEventListener('click', activateCampaign);
+                }
+            }
+
+            function hidePreview() {
+                previewModal.classList.add('hidden');
+            }
+
+            closePreview.addEventListener('click', hidePreview);
+            closePreviewBtn.addEventListener('click', hidePreview);
+
+            // Close modal when clicking outside
+            previewModal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    hidePreview();
+                }
+            });
+
+            // Initialize
+            updateStep(currentStep);
+            updateSelectionCount();
+            updateKeywordsDisplay();
+            addRemoveResponseHandlers();
+            updateResponseCount();
+        });
     </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
 </body>
 </html>
