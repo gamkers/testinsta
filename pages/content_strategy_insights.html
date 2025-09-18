@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content Strategy Insights - InstagramPro Dashboard</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Finstagramp4396back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.5"></script>
+</head>
+<body class="bg-gradient-to-br from-background via-surface to-purple-900/20 min-h-screen">
+    <!-- Fixed Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-lg border-b border-border">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </div>
+                <span class="text-xl font-bold text-white">InstagramPro</span>
+            </div>
+
+            <!-- Navigation Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="landing_page.html" class="text-text-secondary hover:text-white transition-colors">Home</a>
+                <a href="analytics_dashboard.html" class="text-primary font-medium">Analytics</a>
+                <a href="comment_automation_setup.html" class="text-text-secondary hover:text-white transition-colors">Automation</a>
+                <a href="content_strategy_insights.html" class="text-text-secondary hover:text-white transition-colors">Insights</a>
+            </div>
+
+            <!-- User Profile -->
+            <div class="flex items-center space-x-4">
+                <button class="p-2 text-text-secondary hover:text-white transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5-5-5h5v-12"/>
+                    </svg>
+                </button>
+                <div class="w-8 h-8 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white" id="mobile-menu-btn">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-surface/95 backdrop-blur-lg border-t border-border hidden">
+            <div class="px-4 py-4 space-y-4">
+                <a href="landing_page.html" class="block text-text-secondary hover:text-white transition-colors">Home</a>
+                <a href="analytics_dashboard.html" class="block text-primary font-medium">Analytics</a>
+                <a href="comment_automation_setup.html" class="block text-text-secondary hover:text-white transition-colors">Automation</a>
+                <a href="content_strategy_insights.html" class="block text-text-secondary hover:text-white transition-colors">Insights</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-20 pb-8">
+        <div class="container mx-auto px-4">
+            <!-- Breadcrumb -->
+            <nav class="mb-8">
+                <div class="flex items-center space-x-2 text-sm">
+                    <a href="analytics_dashboard.html" class="text-text-secondary hover:text-white transition-colors">Dashboard</a>
+                    <svg class="w-4 h-4 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                    <span class="text-white">Content Strategy</span>
+                </div>
+            </nav>
+
+            <!-- Page Header -->
+            <div class="mb-8">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                    <div>
+                        <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">
+                            Content Strategy
+                            <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                                Insights
+                            </span>
+                        </h1>
+                        <p class="text-text-secondary">AI-powered recommendations to optimize your Instagram content performance</p>
+                    </div>
+                    <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                        <!-- Date Range Selector -->
+                        <select class="glass rounded-lg px-4 py-2 text-white bg-transparent border border-border focus:border-primary outline-none">
+                            <option value="7d">Last 7 days</option>
+                            <option value="30d" selected>Last 30 days</option>
+                            <option value="90d">Last 90 days</option>
+                        </select>
+                        <!-- Export Button -->
+                        <button class="bg-gradient-to-r from-primary to-secondary px-6 py-2 rounded-lg text-white font-medium hover:shadow-glow transition-all duration-300 hover:scale-105 flex items-center space-x-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                            <span>Export Report</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Performance Trends -->
+            <section class="mb-8">
+                <div class="glass rounded-2xl p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-xl font-semibold text-white">Content Performance Trends</h2>
+                        <div class="flex items-center space-x-4">
+                            <button class="text-text-secondary hover:text-white transition-colors text-sm">
+                                Engagement
+                            </button>
+                            <button class="text-primary text-sm border-b border-primary">
+                                Reach
+                            </button>
+                            <button class="text-text-secondary hover:text-white transition-colors text-sm">
+                                Impressions
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Chart Container -->
+                    <div class="relative h-64 mb-6">
+                        <canvas id="performanceChart" class="w-full h-full"></canvas>
+                    </div>
+
+                    <!-- Performance Metrics -->
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-white mb-1">24.5K</div>
+                            <div class="text-sm text-text-secondary">Avg. Reach</div>
+                            <div class="text-xs text-success flex items-center justify-center mt-1">
+                                <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                +12.3%
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-white mb-1">8.2%</div>
+                            <div class="text-sm text-text-secondary">Engagement Rate</div>
+                            <div class="text-xs text-success flex items-center justify-center mt-1">
+                                <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                +5.7%
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-white mb-1">156</div>
+                            <div class="text-sm text-text-secondary">Avg. Comments</div>
+                            <div class="text-xs text-warning flex items-center justify-center mt-1">
+                                <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M14.707 10.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 12.586V5a1 1 0 012 0v7.586l2.293-2.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                -2.1%
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-white mb-1">1.8K</div>
+                            <div class="text-sm text-text-secondary">Avg. Likes</div>
+                            <div class="text-xs text-success flex items-center justify-center mt-1">
+                                <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                +18.4%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hashtag Analysis & Posting Schedule -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                <!-- Hashtag Analysis -->
+                <div class="glass rounded-2xl p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-xl font-semibold text-white">Hashtag Performance</h2>
+                        <button class="text-text-secondary hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Hashtag Cloud -->
+                    <div class="mb-6 p-4 bg-surface/50 rounded-lg">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-medium">#photography</span>
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-lg font-medium">#instagram</span>
+                            <span class="px-3 py-1 bg-accent/20 text-accent rounded-full text-base font-medium">#content</span>
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-medium">#creative</span>
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-xl font-medium">#socialmedia</span>
+                            <span class="px-3 py-1 bg-accent/20 text-accent rounded-full text-sm font-medium">#marketing</span>
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-base font-medium">#brand</span>
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm font-medium">#digital</span>
+                        </div>
+                    </div>
+
+                    <!-- Top Performing Hashtags -->
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-text-secondary">#photography</span>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-20 h-2 bg-surface rounded-full overflow-hidden">
+                                    <div class="w-4/5 h-full bg-gradient-to-r from-primary to-secondary"></div>
+                                </div>
+                                <span class="text-sm text-white">8.5K</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-text-secondary">#socialmedia</span>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-20 h-2 bg-surface rounded-full overflow-hidden">
+                                    <div class="w-3/5 h-full bg-gradient-to-r from-secondary to-accent"></div>
+                                </div>
+                                <span class="text-sm text-white">6.2K</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-text-secondary">#content</span>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-20 h-2 bg-surface rounded-full overflow-hidden">
+                                    <div class="w-2/5 h-full bg-gradient-to-r from-accent to-primary"></div>
+                                </div>
+                                <span class="text-sm text-white">4.1K</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Optimal Posting Schedule -->
+                <div class="glass rounded-2xl p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-xl font-semibold text-white">Optimal Posting Times</h2>
+                        <button class="text-text-secondary hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Heatmap -->
+                    <div class="mb-4">
+                        <div class="grid grid-cols-8 gap-1 text-xs text-text-secondary mb-2">
+                            <div></div>
+                            <div class="text-center">Mon</div>
+                            <div class="text-center">Tue</div>
+                            <div class="text-center">Wed</div>
+                            <div class="text-center">Thu</div>
+                            <div class="text-center">Fri</div>
+                            <div class="text-center">Sat</div>
+                            <div class="text-center">Sun</div>
+                        </div>
+                        
+                        <!-- Time slots -->
+                        <div class="space-y-1">
+                            <div class="grid grid-cols-8 gap-1">
+                                <div class="text-xs text-text-secondary">6AM</div>
+                                <div class="w-6 h-6 bg-surface rounded"></div>
+                                <div class="w-6 h-6 bg-surface rounded"></div>
+                                <div class="w-6 h-6 bg-surface rounded"></div>
+                                <div class="w-6 h-6 bg-surface rounded"></div>
+                                <div class="w-6 h-6 bg-surface rounded"></div>
+                                <div class="w-6 h-6 bg-primary/30 rounded"></div>
+                                <div class="w-6 h-6 bg-primary/30 rounded"></div>
+                            </div>
+                            <div class="grid grid-cols-8 gap-1">
+                                <div class="text-xs text-text-secondary">12PM</div>
+                                <div class="w-6 h-6 bg-primary/60 rounded"></div>
+                                <div class="w-6 h-6 bg-primary/60 rounded"></div>
+                                <div class="w-6 h-6 bg-secondary/60 rounded"></div>
+                                <div class="w-6 h-6 bg-secondary/60 rounded"></div>
+                                <div class="w-6 h-6 bg-primary/60 rounded"></div>
+                                <div class="w-6 h-6 bg-surface rounded"></div>
+                                <div class="w-6 h-6 bg-surface rounded"></div>
+                            </div>
+                            <div class="grid grid-cols-8 gap-1">
+                                <div class="text-xs text-text-secondary">6PM</div>
+                                <div class="w-6 h-6 bg-secondary rounded"></div>
+                                <div class="w-6 h-6 bg-secondary rounded"></div>
+                                <div class="w-6 h-6 bg-primary rounded"></div>
+                                <div class="w-6 h-6 bg-primary rounded"></div>
+                                <div class="w-6 h-6 bg-secondary rounded"></div>
+                                <div class="w-6 h-6 bg-primary/30 rounded"></div>
+                                <div class="w-6 h-6 bg-primary/30 rounded"></div>
+                            </div>
+                            <div class="grid grid-cols-8 gap-1">
+                                <div class="text-xs text-text-secondary">9PM</div>
+                                <div class="w-6 h-6 bg-primary/60 rounded"></div>
+                                <div class="w-6 h-6 bg-primary/60 rounded"></div>
+                                <div class="w-6 h-6 bg-secondary/60 rounded"></div>
+                                <div class="w-6 h-6 bg-secondary/60 rounded"></div>
+                                <div class="w-6 h-6 bg-primary/60 rounded"></div>
+                                <div class="w-6 h-6 bg-surface rounded"></div>
+                                <div class="w-6 h-6 bg-surface rounded"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Legend -->
+                    <div class="flex items-center justify-between text-xs">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-3 h-3 bg-surface rounded"></div>
+                            <span class="text-text-secondary">Low</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-3 h-3 bg-primary/30 rounded"></div>
+                            <span class="text-text-secondary">Medium</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-3 h-3 bg-primary/60 rounded"></div>
+                            <span class="text-text-secondary">High</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-3 h-3 bg-primary rounded"></div>
+                            <span class="text-text-secondary">Peak</span>
+                        </div>
+                    </div>
+
+                    <!-- Best Times -->
+                    <div class="mt-4 p-3 bg-primary/10 rounded-lg">
+                        <div class="text-sm font-medium text-white mb-2">Recommended Times</div>
+                        <div class="text-xs text-text-secondary">
+                            Weekdays: 12PM - 1PM, 6PM - 8PM<br />
+                            Weekends: 6AM - 8AM, 6PM - 7PM
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Content Suggestions -->
+            <section class="mb-8">
+                <div class="glass rounded-2xl p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-xl font-semibold text-white flex items-center">
+                            <svg class="w-6 h-6 mr-2 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                            </svg>
+                            AI Content Suggestions
+                        </h2>
+                        <button class="bg-gradient-to-r from-primary to-secondary px-4 py-2 rounded-lg text-white text-sm font-medium hover:shadow-glow transition-all duration-300">
+                            Generate More
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Caption Suggestion 1 -->
+                        <div class="bg-surface/50 rounded-lg p-4 hover:bg-surface/70 transition-colors cursor-pointer">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded-full">Caption Idea</span>
+                                <button class="text-text-secondary hover:text-white transition-colors">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <p class="text-sm text-text-secondary mb-3">
+                                "Behind every great photo is an even greater story. What's yours? ✨ #photography #storytelling #creative"
+                            </p>
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-success">92% engagement potential</span>
+                                <span class="text-text-secondary">Best for: Photos</span>
+                            </div>
+                        </div>
+
+                        <!-- Hashtag Suggestion -->
+                        <div class="bg-surface/50 rounded-lg p-4 hover:bg-surface/70 transition-colors cursor-pointer">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs bg-secondary/20 text-secondary px-2 py-1 rounded-full">Trending Tags</span>
+                                <button class="text-text-secondary hover:text-white transition-colors">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="flex flex-wrap gap-1 mb-3">
+                                <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">#contentcreator</span>
+                                <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">#digitalart</span>
+                                <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">#inspiration</span>
+                                <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">#motivation</span>
+                            </div>
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-warning">Rising 45% this week</span>
+                                <span class="text-text-secondary">Avg reach: 12K</span>
+                            </div>
+                        </div>
+
+                        <!-- Content Type Suggestion -->
+                        <div class="bg-surface/50 rounded-lg p-4 hover:bg-surface/70 transition-colors cursor-pointer">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs bg-accent/20 text-accent px-2 py-1 rounded-full">Content Type</span>
+                                <button class="text-text-secondary hover:text-white transition-colors">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <p class="text-sm text-text-secondary mb-3">
+                                Carousel posts perform 3x better for your audience. Try sharing step-by-step tutorials or before/after content.
+                            </p>
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-success">+180% engagement</span>
+                                <span class="text-text-secondary">Best time: 6PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Competitor Analysis -->
+            <section>
+                <div class="glass rounded-2xl p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-xl font-semibold text-white">Competitor Insights</h2>
+                        <button class="text-text-secondary hover:text-white transition-colors text-sm">
+                            View All Competitors
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Competitor 1 -->
+                        <div class="bg-surface/50 rounded-lg p-4">
+                            <div class="flex items-center mb-4">
+                                <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Competitor" class="w-10 h-10 rounded-full object-cover mr-3" onerror="this.src='https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=400&auto=format&fit=crop'; this.onerror=null;" />
+                                <div>
+                                    <h4 class="text-white font-medium">@creativestudio</h4>
+                                    <p class="text-xs text-text-secondary">125K followers</p>
+                                </div>
+                            </div>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-text-secondary">Avg. Engagement</span>
+                                    <span class="text-white">12.4%</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-text-secondary">Posts/Week</span>
+                                    <span class="text-white">5.2</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-text-secondary">Top Hashtag</span>
+                                    <span class="text-primary">#design</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Competitor 2 -->
+                        <div class="bg-surface/50 rounded-lg p-4">
+                            <div class="flex items-center mb-4">
+                                <img src="https://images.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg" alt="Competitor" class="w-10 h-10 rounded-full object-cover mr-3" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop'; this.onerror=null;" />
+                                <div>
+                                    <h4 class="text-white font-medium">@brandbuilder</h4>
+                                    <p class="text-xs text-text-secondary">89K followers</p>
+                                </div>
+                            </div>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-text-secondary">Avg. Engagement</span>
+                                    <span class="text-white">9.8%</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-text-secondary">Posts/Week</span>
+                                    <span class="text-white">7.1</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-text-secondary">Top Hashtag</span>
+                                    <span class="text-secondary">#marketing</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Industry Benchmark -->
+                        <div class="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg p-4 border border-primary/20">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mr-3">
+                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-medium">Industry Average</h4>
+                                    <p class="text-xs text-text-secondary">Your niche</p>
+                                </div>
+                            </div>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-text-secondary">Avg. Engagement</span>
+                                    <span class="text-white">6.2%</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-text-secondary">Posts/Week</span>
+                                    <span class="text-white">4.5</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-text-secondary">Your Performance</span>
+                                    <span class="text-success">+32% above avg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Performance Chart
+        function createPerformanceChart() {
+            const canvas = document.getElementById('performanceChart');
+            const ctx = canvas.getContext('2d');
+            
+            // Set canvas size
+            canvas.width = canvas.offsetWidth * 2;
+            canvas.height = canvas.offsetHeight * 2;
+            ctx.scale(2, 2);
+            
+            const width = canvas.offsetWidth;
+            const height = canvas.offsetHeight;
+            
+            // Sample data
+            const data = [
+                { x: 0, y: 120 },
+                { x: 50, y: 180 },
+                { x: 100, y: 150 },
+                { x: 150, y: 220 },
+                { x: 200, y: 190 },
+                { x: 250, y: 280 },
+                { x: 300, y: 250 },
+                { x: 350, y: 320 }
+            ];
+            
+            // Clear canvas
+            ctx.clearRect(0, 0, width, height);
+            
+            // Create gradient
+            const gradient = ctx.createLinearGradient(0, 0, 0, height);
+            gradient.addColorStop(0, 'rgba(102, 126, 234, 0.3)');
+            gradient.addColorStop(1, 'rgba(102, 126, 234, 0.05)');
+            
+            // Draw area
+            ctx.beginPath();
+            ctx.moveTo(data[0].x, height);
+            data.forEach(point => {
+                ctx.lineTo(point.x, height - (point.y / 400 * height));
+            });
+            ctx.lineTo(data[data.length - 1].x, height);
+            ctx.closePath();
+            ctx.fillStyle = gradient;
+            ctx.fill();
+            
+            // Draw line
+            ctx.beginPath();
+            ctx.moveTo(data[0].x, height - (data[0].y / 400 * height));
+            data.forEach(point => {
+                ctx.lineTo(point.x, height - (point.y / 400 * height));
+            });
+            ctx.strokeStyle = '#667eea';
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            
+            // Draw points
+            data.forEach(point => {
+                ctx.beginPath();
+                ctx.arc(point.x, height - (point.y / 400 * height), 4, 0, 2 * Math.PI);
+                ctx.fillStyle = '#667eea';
+                ctx.fill();
+                ctx.strokeStyle = '#ffffff';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+            });
+        }
+
+        // Initialize chart when page loads
+        window.addEventListener('load', function() {
+            createPerformanceChart();
+        });
+
+        // Redraw chart on window resize
+        window.addEventListener('resize', function() {
+            setTimeout(createPerformanceChart, 100);
+        });
+
+        // Add click handlers for suggestion cards
+        document.querySelectorAll('.bg-surface\\/50').forEach(card => {
+            card.addEventListener('click', function() {
+                // Add selection state
+                this.classList.toggle('ring-2');
+                this.classList.toggle('ring-primary');
+            });
+        });
+
+        // Export functionality
+        document.querySelector('button[class*="bg-gradient-to-r"]').addEventListener('click', function() {
+            // Simulate export
+            this.innerHTML = '<svg class="animate-spin w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>Exporting...';
+            
+            setTimeout(() => {
+                this.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg><span>Export Report</span>';
+            }, 2000);
+        });
+
+        // Animate counters on scroll
+        function animateCounters() {
+            const counters = document.querySelectorAll('.text-2xl.font-bold');
+            
+            counters.forEach(counter => {
+                const target = counter.textContent;
+                const numericValue = parseFloat(target.replace(/[^\d.]/g, ''));
+                const suffix = target.replace(/[\d.]/g, '');
+                
+                let current = 0;
+                const increment = numericValue / 50;
+                
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < numericValue) {
+                        counter.textContent = current.toFixed(1) + suffix;
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+
+        // Trigger counter animation on page load
+        window.addEventListener('load', function() {
+            setTimeout(animateCounters, 500);
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

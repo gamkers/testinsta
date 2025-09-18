@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InstagramPro Dashboard</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a0a2e 100%);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .loader-container {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        
+        .loading-text {
+            font-size: 1.125rem;
+            color: #a1a1aa;
+            margin-bottom: 2rem;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(168, 85, 247, 0.3);
+            border-top: 3px solid #a855f7;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .page-links {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            align-items: center;
+        }
+        
+        .page-link {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.5rem;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+            min-width: 200px;
+            text-align: center;
+        }
+        
+        .page-link:hover {
+            transform: scale(1.02);
+            background: rgba(168, 85, 247, 0.1);
+            border-color: rgba(168, 85, 247, 0.3);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Finstagramp4396back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.5"></script>
+</head>
+<body>
+    <div class="loader-container">
+        <div class="logo">InstagramPro</div>
+        <div class="loading-text">Initializing Dashboard...</div>
+        <div class="spinner"></div>
+        
+        <div class="page-links">
+            <a href="pages/landing_page.html" class="page-link">Landing Page</a>
+            <a href="pages/analytics_dashboard.html" class="page-link">Analytics Dashboard</a>
+            <a href="pages/comment_automation_setup.html" class="page-link">Comment Automation Setup</a>
+            <a href="pages/content_strategy_insights.html" class="page-link">Content Strategy Insights</a>
+        </div>
+    </div>
+
+    <script>
+        // Auto-redirect to landing page after 3 seconds
+        setTimeout(function() {
+            window.location.href = 'pages/landing_page.html';
+        }, 3000);
+        
+        // Optional: Allow manual navigation before auto-redirect
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.page-link');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute('href');
+                    
+                    // Add loading state
+                    this.style.opacity = '0.7';
+                    this.innerHTML = 'Loading...';
+                    
+                    // Navigate after brief delay
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500);
+                });
+            });
+        });
+    </script>
+<script id="dhws-dataInjector" src="/public/dhws-data-injector.js"></script>
+</body>
+</html>

@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analytics Dashboard - InstagramPro Dashboard</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Finstagramp4396back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.5"></script>
+</head>
+<body class="bg-gradient-to-br from-background via-surface to-purple-900/20 min-h-screen">
+    <!-- Fixed Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-lg border-b border-border">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </div>
+                <span class="text-xl font-bold text-white">InstagramPro</span>
+            </div>
+
+            <!-- Navigation Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="analytics_dashboard.html" class="text-white font-medium border-b-2 border-primary pb-1">Dashboard</a>
+                <a href="comment_automation_setup.html" class="text-text-secondary hover:text-white transition-colors">Automation</a>
+                <a href="content_strategy_insights.html" class="text-text-secondary hover:text-white transition-colors">Insights</a>
+                <a href="#" class="text-text-secondary hover:text-white transition-colors">Settings</a>
+            </div>
+
+            <!-- User Profile & Actions -->
+            <div class="flex items-center space-x-4">
+                <!-- Refresh Button -->
+                <button id="refresh-btn" class="p-2 text-text-secondary hover:text-white transition-colors hover:bg-surface-light rounded-lg">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                    </svg>
+                </button>
+
+                <!-- Notifications -->
+                <div class="relative">
+                    <button class="p-2 text-text-secondary hover:text-white transition-colors hover:bg-surface-light rounded-lg">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5v-5zM4 19h11a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </button>
+                    <div class="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full animate-pulse"></div>
+                </div>
+
+                <!-- User Profile Dropdown -->
+                <div class="relative">
+                    <button id="profile-btn" class="flex items-center space-x-2 p-2 hover:bg-surface-light rounded-lg transition-colors">
+                        <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Profile" class="w-8 h-8 rounded-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=400&auto=format&fit=crop'; this.onerror=null;" />
+                        <span class="text-white font-medium hidden md:block">GAMKERS</span>
+                        <svg class="w-4 h-4 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7m0 0l-7-7m7 7V3"/>
+                        </svg>
+                    </button>
+                    
+                    <!-- Dropdown Menu -->
+                    <div id="profile-dropdown" class="absolute right-0 mt-2 w-48 glass rounded-lg shadow-modal hidden">
+                        <div class="py-2">
+                            <a href="#" class="block px-4 py-2 text-text-secondary hover:text-white hover:bg-surface-light transition-colors">Profile Settings</a>
+                            <a href="#" class="block px-4 py-2 text-text-secondary hover:text-white hover:bg-surface-light transition-colors">Account</a>
+                            <div class="border-t border-border my-2"></div>
+                            <a href="landing_page.html" class="block px-4 py-2 text-text-secondary hover:text-white hover:bg-surface-light transition-colors">Sign Out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white" id="mobile-menu-btn">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-surface/95 backdrop-blur-lg border-t border-border hidden">
+            <div class="px-4 py-4 space-y-4">
+                <a href="analytics_dashboard.html" class="block text-white font-medium">Dashboard</a>
+                <a href="comment_automation_setup.html" class="block text-text-secondary hover:text-white transition-colors">Automation</a>
+                <a href="content_strategy_insights.html" class="block text-text-secondary hover:text-white transition-colors">Insights</a>
+                <a href="#" class="block text-text-secondary hover:text-white transition-colors">Settings</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-20 pb-8">
+        <div class="container mx-auto px-4">
+            <!-- Page Header -->
+            <div class="mb-8">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                    <div>
+                        <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Analytics Dashboard</h1>
+                        <p class="text-text-secondary">Track your Instagram performance and growth insights</p>
+                    </div>
+                    <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                        <!-- Time Range Selector -->
+                        <div class="flex items-center space-x-2">
+                            <button class="px-3 py-2 text-sm bg-primary text-white rounded-lg font-medium">7 Days</button>
+                            <button class="px-3 py-2 text-sm text-text-secondary hover:text-white transition-colors">30 Days</button>
+                            <button class="px-3 py-2 text-sm text-text-secondary hover:text-white transition-colors">90 Days</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Metrics Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <!-- Followers Card -->
+                <div class="glass rounded-2xl p-6 hover:shadow-glow transition-all duration-300">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                        <div class="flex items-center space-x-1 text-success text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11l5-5m0 0l5 5m-5-5v12"/>
+                            </svg>
+                            <span>+12.5%</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-white mb-1">47.2K</div>
+                        <div class="text-text-secondary text-sm">Followers</div>
+                    </div>
+                </div>
+
+                <!-- Posts Card -->
+                <div class="glass rounded-2xl p-6 hover:shadow-glow transition-all duration-300">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-secondary to-accent rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <div class="flex items-center space-x-1 text-success text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11l5-5m0 0l5 5m-5-5v12"/>
+                            </svg>
+                            <span>+8.3%</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-white mb-1">1,247</div>
+                        <div class="text-text-secondary text-sm">Total Posts</div>
+                    </div>
+                </div>
+
+                <!-- Engagement Rate Card -->
+                <div class="glass rounded-2xl p-6 hover:shadow-glow transition-all duration-300">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-accent to-primary rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                            </svg>
+                        </div>
+                        <div class="flex items-center space-x-1 text-warning text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                            </svg>
+                            <span>-2.1%</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-white mb-1">6.8%</div>
+                        <div class="text-text-secondary text-sm">Engagement Rate</div>
+                    </div>
+                </div>
+
+                <!-- Growth Card -->
+                <div class="glass rounded-2xl p-6 hover:shadow-glow transition-all duration-300">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                            </svg>
+                        </div>
+                        <div class="flex items-center space-x-1 text-success text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11l5-5m0 0l5 5m-5-5v12"/>
+                            </svg>
+                            <span>+24.7%</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-white mb-1">+5.2K</div>
+                        <div class="text-text-secondary text-sm">Weekly Growth</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts and Content Analysis -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
+                <!-- Engagement Chart -->
+                <div class="lg:col-span-8">
+                    <div class="glass rounded-2xl p-6">
+                        <div class="flex items-center justify-between mb-6">
+                            <h2 class="text-xl font-semibold text-white">Engagement Overview</h2>
+                            <div class="flex items-center space-x-2">
+                                <button class="px-3 py-1 text-sm bg-primary text-white rounded-lg">Likes</button>
+                                <button class="px-3 py-1 text-sm text-text-secondary hover:text-white transition-colors">Comments</button>
+                                <button class="px-3 py-1 text-sm text-text-secondary hover:text-white transition-colors">Shares</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Chart Container -->
+                        <div class="relative h-80">
+                            <canvas id="engagement-chart" class="w-full h-full"></canvas>
+                            <!-- Chart Placeholder -->
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <svg class="w-full h-full" viewBox="0 0 800 320">
+                                    <defs>
+                                        <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.3"/>
+                                            <stop offset="100%" style="stop-color:#764ba2;stop-opacity:0.1"/>
+                                        </linearGradient>
+                                    </defs>
+                                    
+                                    <!-- Grid Lines -->
+                                    <g stroke="rgba(255,255,255,0.1)" stroke-width="1">
+                                        <line x1="0" y1="80" x2="800" y2="80"/>
+                                        <line x1="0" y1="160" x2="800" y2="160"/>
+                                        <line x1="0" y1="240" x2="800" y2="240"/>
+                                    </g>
+                                    
+                                    <!-- Chart Line -->
+                                    <path d="M 50 200 Q 150 120 250 140 T 450 100 T 650 80 L 750 90" stroke="#667eea" stroke-width="3" fill="none"/>
+                                    
+                                    <!-- Fill Area -->
+                                    <path d="M 50 200 Q 150 120 250 140 T 450 100 T 650 80 L 750 90 L 750 320 L 50 320 Z" fill="url(#chartGradient)"/>
+                                    
+                                    <!-- Data Points -->
+                                    <circle cx="50" cy="200" r="4" fill="#667eea"/>
+                                    <circle cx="250" cy="140" r="4" fill="#667eea"/>
+                                    <circle cx="450" cy="100" r="4" fill="#667eea"/>
+                                    <circle cx="650" cy="80" r="4" fill="#667eea"/>
+                                    <circle cx="750" cy="90" r="4" fill="#667eea"/>
+                                </svg>
+                            </div>
+                        </div>
+                        
+                        <!-- Chart Legend -->
+                        <div class="flex items-center justify-center space-x-6 mt-4">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-3 h-3 bg-primary rounded-full"></div>
+                                <span class="text-text-secondary text-sm">Likes</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-3 h-3 bg-secondary rounded-full"></div>
+                                <span class="text-text-secondary text-sm">Comments</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-3 h-3 bg-accent rounded-full"></div>
+                                <span class="text-text-secondary text-sm">Shares</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Top Performing Content -->
+                <div class="lg:col-span-4">
+                    <div class="glass rounded-2xl p-6">
+                        <div class="flex items-center justify-between mb-6">
+                            <h2 class="text-xl font-semibold text-white">Top Posts</h2>
+                            <a href="content_strategy_insights.html" class="text-primary hover:text-primary-400 text-sm transition-colors">View All</a>
+                        </div>
+                        
+                        <!-- Top Posts List -->
+                        <div class="space-y-4">
+                            <!-- Post 1 -->
+                            <div class="flex items-center space-x-3 p-3 hover:bg-surface-light rounded-lg transition-colors cursor-pointer">
+                                <div class="relative">
+                                    <img src="https://images.unsplash.com/photo-1611262588024-d12430b98920?q=80&w=400&auto=format&fit=crop" alt="Post 1" class="w-12 h-12 rounded-lg object-cover" onerror="this.src='https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400'; this.onerror=null;" />
+                                    <div class="absolute -top-1 -right-1 w-4 h-4 bg-success rounded-full flex items-center justify-center">
+                                        <span class="text-xs text-white font-bold">1</span>
+                                    </div>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-white text-sm font-medium">Morning workout routine</div>
+                                    <div class="text-text-secondary text-xs">2.4K likes • 156 comments</div>
+                                </div>
+                                <div class="text-success text-sm font-medium">+18.5%</div>
+                            </div>
+
+                            <!-- Post 2 -->
+                            <div class="flex items-center space-x-3 p-3 hover:bg-surface-light rounded-lg transition-colors cursor-pointer">
+                                <div class="relative">
+                                    <img src="https://images.pixabay.com/photo/2017/08/06/12/06/people-2591874_960_720.jpg" alt="Post 2" class="w-12 h-12 rounded-lg object-cover" onerror="this.src='https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=400&auto=format&fit=crop'; this.onerror=null;" />
+                                    <div class="absolute -top-1 -right-1 w-4 h-4 bg-warning rounded-full flex items-center justify-center">
+                                        <span class="text-xs text-white font-bold">2</span>
+                                    </div>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-white text-sm font-medium">Healthy breakfast ideas</div>
+                                    <div class="text-text-secondary text-xs">1.8K likes • 89 comments</div>
+                                </div>
+                                <div class="text-success text-sm font-medium">+12.3%</div>
+                            </div>
+
+                            <!-- Post 3 -->
+                            <div class="flex items-center space-x-3 p-3 hover:bg-surface-light rounded-lg transition-colors cursor-pointer">
+                                <div class="relative">
+                                    <img src="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Post 3" class="w-12 h-12 rounded-lg object-cover" onerror="this.src='https://images.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg'; this.onerror=null;" />
+                                    <div class="absolute -top-1 -right-1 w-4 h-4 bg-accent rounded-full flex items-center justify-center">
+                                        <span class="text-xs text-white font-bold">3</span>
+                                    </div>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-white text-sm font-medium">Weekend vibes</div>
+                                    <div class="text-text-secondary text-xs">1.5K likes • 67 comments</div>
+                                </div>
+                                <div class="text-success text-sm font-medium">+9.7%</div>
+                            </div>
+
+                            <!-- Post 4 -->
+                            <div class="flex items-center space-x-3 p-3 hover:bg-surface-light rounded-lg transition-colors cursor-pointer">
+                                <div class="relative">
+                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=400&auto=format&fit=crop" alt="Post 4" class="w-12 h-12 rounded-lg object-cover" onerror="this.src='https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=400&auto=format&fit=crop'; this.onerror=null;" />
+                                    <div class="absolute -top-1 -right-1 w-4 h-4 bg-primary rounded-full flex items-center justify-center">
+                                        <span class="text-xs text-white font-bold">4</span>
+                                    </div>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-white text-sm font-medium">Style inspiration</div>
+                                    <div class="text-text-secondary text-xs">1.2K likes • 45 comments</div>
+                                </div>
+                                <div class="text-warning text-sm font-medium">+5.2%</div>
+                            </div>
+
+                            <!-- Post 5 -->
+                            <div class="flex items-center space-x-3 p-3 hover:bg-surface-light rounded-lg transition-colors cursor-pointer">
+                                <div class="relative">
+                                    <img src="https://images.pixabay.com/photo/2018/01/15/07/51/woman-3083383_960_720.jpg" alt="Post 5" class="w-12 h-12 rounded-lg object-cover" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop'; this.onerror=null;" />
+                                    <div class="absolute -top-1 -right-1 w-4 h-4 bg-secondary rounded-full flex items-center justify-center">
+                                        <span class="text-xs text-white font-bold">5</span>
+                                    </div>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-white text-sm font-medium">Travel memories</div>
+                                    <div class="text-text-secondary text-xs">987 likes • 32 comments</div>
+                                </div>
+                                <div class="text-error text-sm font-medium">-1.8%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Strategy Insights -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Hashtag Cloud -->
+                <div class="glass rounded-2xl p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-xl font-semibold text-white">Trending Hashtags</h2>
+                        <a href="content_strategy_insights.html" class="text-primary hover:text-primary-400 text-sm transition-colors">View All</a>
+                    </div>
+                    
+                    <!-- Hashtag Cloud -->
+                    <div class="space-y-3">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">#fitness</span>
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm">#workout</span>
+                            <span class="px-3 py-1 bg-accent/20 text-accent rounded-full text-sm">#healthy</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">#motivation</span>
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm">#lifestyle</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-accent/20 text-accent rounded-full text-sm">#wellness</span>
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">#mindset</span>
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm">#goals</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Hashtag Performance -->
+                    <div class="mt-6 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-text-secondary text-sm">#fitness</span>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-20 h-2 bg-surface-light rounded-full overflow-hidden">
+                                    <div class="w-4/5 h-full bg-gradient-to-r from-primary to-secondary"></div>
+                                </div>
+                                <span class="text-white text-sm">85%</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-text-secondary text-sm">#workout</span>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-20 h-2 bg-surface-light rounded-full overflow-hidden">
+                                    <div class="w-3/5 h-full bg-gradient-to-r from-secondary to-accent"></div>
+                                </div>
+                                <span class="text-white text-sm">72%</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-text-secondary text-sm">#healthy</span>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-20 h-2 bg-surface-light rounded-full overflow-hidden">
+                                    <div class="w-2/3 h-full bg-gradient-to-r from-accent to-primary"></div>
+                                </div>
+                                <span class="text-white text-sm">68%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Optimal Posting Times -->
+                <div class="glass rounded-2xl p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-xl font-semibold text-white">Best Times to Post</h2>
+                        <button class="text-primary hover:text-primary-400 text-sm transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <!-- Time Heatmap -->
+                    <div class="space-y-2">
+                        <!-- Days of Week -->
+                        <div class="grid grid-cols-8 gap-1 text-xs text-text-secondary">
+                            <div></div>
+                            <div class="text-center">Mon</div>
+                            <div class="text-center">Tue</div>
+                            <div class="text-center">Wed</div>
+                            <div class="text-center">Thu</div>
+                            <div class="text-center">Fri</div>
+                            <div class="text-center">Sat</div>
+                            <div class="text-center">Sun</div>
+                        </div>
+                        
+                        <!-- Time Slots -->
+                        <div class="space-y-1">
+                            <!-- 9 AM -->
+                            <div class="grid grid-cols-8 gap-1">
+                                <div class="text-xs text-text-secondary">9AM</div>
+                                <div class="h-6 bg-primary/30 rounded"></div>
+                                <div class="h-6 bg-primary/50 rounded"></div>
+                                <div class="h-6 bg-primary/40 rounded"></div>
+                                <div class="h-6 bg-primary/60 rounded"></div>
+                                <div class="h-6 bg-primary/70 rounded"></div>
+                                <div class="h-6 bg-primary/80 rounded"></div>
+                                <div class="h-6 bg-primary/60 rounded"></div>
+                            </div>
+                            
+                            <!-- 12 PM -->
+                            <div class="grid grid-cols-8 gap-1">
+                                <div class="text-xs text-text-secondary">12PM</div>
+                                <div class="h-6 bg-secondary/40 rounded"></div>
+                                <div class="h-6 bg-secondary/60 rounded"></div>
+                                <div class="h-6 bg-secondary/80 rounded"></div>
+                                <div class="h-6 bg-secondary/90 rounded"></div>
+                                <div class="h-6 bg-secondary/70 rounded"></div>
+                                <div class="h-6 bg-secondary/50 rounded"></div>
+                                <div class="h-6 bg-secondary/40 rounded"></div>
+                            </div>
+                            
+                            <!-- 6 PM -->
+                            <div class="grid grid-cols-8 gap-1">
+                                <div class="text-xs text-text-secondary">6PM</div>
+                                <div class="h-6 bg-accent/50 rounded"></div>
+                                <div class="h-6 bg-accent/70 rounded"></div>
+                                <div class="h-6 bg-accent/90 rounded"></div>
+                                <div class="h-6 bg-accent/100 rounded"></div>
+                                <div class="h-6 bg-accent/80 rounded"></div>
+                                <div class="h-6 bg-accent/90 rounded"></div>
+                                <div class="h-6 bg-accent/70 rounded"></div>
+                            </div>
+                            
+                            <!-- 9 PM -->
+                            <div class="grid grid-cols-8 gap-1">
+                                <div class="text-xs text-text-secondary">9PM</div>
+                                <div class="h-6 bg-primary/20 rounded"></div>
+                                <div class="h-6 bg-primary/30 rounded"></div>
+                                <div class="h-6 bg-primary/40 rounded"></div>
+                                <div class="h-6 bg-primary/50 rounded"></div>
+                                <div class="h-6 bg-primary/60 rounded"></div>
+                                <div class="h-6 bg-primary/70 rounded"></div>
+                                <div class="h-6 bg-primary/50 rounded"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Legend -->
+                    <div class="flex items-center justify-between mt-4 text-xs text-text-secondary">
+                        <span>Low</span>
+                        <div class="flex items-center space-x-1">
+                            <div class="w-3 h-3 bg-primary/20 rounded"></div>
+                            <div class="w-3 h-3 bg-primary/40 rounded"></div>
+                            <div class="w-3 h-3 bg-primary/60 rounded"></div>
+                            <div class="w-3 h-3 bg-primary/80 rounded"></div>
+                            <div class="w-3 h-3 bg-primary rounded"></div>
+                        </div>
+                        <span>High</span>
+                    </div>
+                </div>
+
+                <!-- AI Growth Recommendations -->
+                <div class="glass rounded-2xl p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-xl font-semibold text-white">AI Recommendations</h2>
+                        <div class="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                    </div>
+                    
+                    <!-- Recommendations List -->
+                    <div class="space-y-4">
+                        <!-- Recommendation 1 -->
+                        <div class="p-4 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg border border-primary/20">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-white font-medium text-sm mb-1">Post More Videos</div>
+                                    <div class="text-text-secondary text-xs">Video content gets 3x more engagement than photos. Try posting 2-3 videos per week.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recommendation 2 -->
+                        <div class="p-4 bg-gradient-to-r from-secondary/10 to-accent/10 rounded-lg border border-secondary/20">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 bg-gradient-to-r from-secondary to-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-white font-medium text-sm mb-1">Use Trending Hashtags</div>
+                                    <div class="text-text-secondary text-xs">Add #mondaymotivation and #transformationtuesday to boost reach by 25%.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recommendation 3 -->
+                        <div class="p-4 bg-gradient-to-r from-accent/10 to-primary/10 rounded-lg border border-accent/20">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 bg-gradient-to-r from-accent to-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-white font-medium text-sm mb-1">Optimal Timing</div>
+                                    <div class="text-text-secondary text-xs">Post between 6-9 PM on weekdays for maximum engagement.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- View More Button -->
+                    <div class="mt-6">
+                        <a href="content_strategy_insights.html" class="w-full bg-gradient-to-r from-primary to-secondary px-4 py-2 rounded-lg text-white font-medium text-sm hover:shadow-glow transition-all duration-300 flex items-center justify-center space-x-2">
+                            <span>View All Recommendations</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7m0 0l7-7m7 7V3"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center hidden">
+        <div class="glass rounded-2xl p-8 flex flex-col items-center space-y-4">
+            <div class="w-12 h-12 border-4 border-primary/30 border-t-primary rounded-full animate-spin"></div>
+            <div class="text-white font-medium">Refreshing data...</div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Webhook Configuration
+        const WEBHOOK_BASE_URL = 'https://n8n.gamkers.in/webhook';
+        
+        let analyticsData = null;
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Profile dropdown toggle
+        const profileBtn = document.getElementById('profile-btn');
+        const profileDropdown = document.getElementById('profile-dropdown');
+
+        profileBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            profileDropdown.classList.toggle('hidden');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function() {
+            profileDropdown.classList.add('hidden');
+        });
+
+        // Load analytics data from webhook
+        async function loadAnalyticsData() {
+            const loadingOverlay = document.getElementById('loading-overlay');
+            
+            try {
+                loadingOverlay.classList.remove('hidden');
+                
+                const response = await fetch(`${WEBHOOK_BASE_URL}/insta_analytics`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                analyticsData = await response.json();
+                renderDashboardData(analyticsData);
+                
+            } catch (error) {
+                console.error('Error loading analytics data:', error);
+                showNotification('Failed to load analytics data. Please try again.', 'error');
+            } finally {
+                loadingOverlay.classList.add('hidden');
+            }
+        }
+
+        // Render dashboard with real data
+        function renderDashboardData(data) {
+            if (!data) return;
+            
+            // Update key metrics cards
+            updateMetricsCards(data.account, data.performance);
+            
+            // Update top posts
+            updateTopPosts(data.topContent);
+            
+            // Update hashtag trends
+            updateHashtagTrends(data.contentInsights);
+            
+            // Update posting times
+            updatePostingTimes(data.timing);
+            
+            // Update AI recommendations
+            updateAIRecommendations(data.aiRecommendations);
+        }
+
+        // Update metrics cards with real data
+        function updateMetricsCards(account, performance) {
+            if (!account || !performance) return;
+            
+            // Update followers
+            const followersCard = document.querySelector('.glass .text-2xl.font-bold.text-white.mb-1');
+            if (followersCard && account.followers) {
+                followersCard.textContent = formatNumber(account.followers);
+            }
+            
+            // Update posts count
+            const postsCards = document.querySelectorAll('.glass .text-2xl.font-bold.text-white.mb-1');
+            if (postsCards[1] && account.totalPosts) {
+                postsCards[1].textContent = formatNumber(account.totalPosts);
+            }
+            
+            // Update engagement rate
+            if (postsCards[2] && performance.overallEngagementRate) {
+                postsCards[2].textContent = `${performance.overallEngagementRate}%`;
+            }
+            
+            // Update growth metric
+            if (postsCards[3] && performance.weeklyGrowth) {
+                postsCards[3].textContent = `+${formatNumber(performance.weeklyGrowth)}`;
+            }
+        }
+
+        // Update top posts with real data
+        function updateTopPosts(topContent) {
+            if (!topContent || !topContent.byEngagement) return;
+            
+            const topPostsContainer = document.querySelector('.lg\\:col-span-4 .space-y-4');
+            if (!topPostsContainer) return;
+            
+            topPostsContainer.innerHTML = '';
+            
+            topContent.byEngagement.slice(0, 5).forEach((post, index) => {
+                const postElement = document.createElement('div');
+                postElement.className = 'flex items-center space-x-3 p-3 hover:bg-surface-light rounded-lg transition-colors cursor-pointer';
+                
+                const engagementClass = index === 0 ? 'bg-success' : 
+                                       index === 1 ? 'bg-warning' : 
+                                       index === 2 ? 'bg-accent' : 
+                                       index === 3 ? 'bg-primary' : 'bg-secondary';
+                
+                const engagementChange = post.engagementGrowth ? `+${post.engagementGrowth}%` : '+0%';
+                
+                postElement.innerHTML = `
+                    <div class="relative">
+                        <img src="${post.media_url || 'https://images.unsplash.com/photo-1611262588024-d12430b98920?q=80&w=400&auto=format&fit=crop'}" 
+                             alt="Post ${index + 1}" 
+                             class="w-12 h-12 rounded-lg object-cover" 
+                             onerror="this.src='https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400'; this.onerror=null;" />
+                        <div class="absolute -top-1 -right-1 w-4 h-4 ${engagementClass} rounded-full flex items-center justify-center">
+                            <span class="text-xs text-white font-bold">${index + 1}</span>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <div class="text-white text-sm font-medium">${truncateText(post.caption || 'No caption', 30)}</div>
+                        <div class="text-text-secondary text-xs">${formatNumber(post.likes || 0)} likes • ${formatNumber(post.comments || 0)} comments</div>
+                    </div>
+                    <div class="text-success text-sm font-medium">${engagementChange}</div>
+                `;
+                
+                topPostsContainer.appendChild(postElement);
+            });
+        }
+
+        // Update hashtag trends with real data
+        function updateHashtagTrends(insights) {
+            if (!insights || !insights.hashtags) return;
+            
+            const hashtagContainer = document.querySelector('.space-y-3');
+            if (!hashtagContainer) return;
+            
+            // Clear existing hashtags
+            hashtagContainer.innerHTML = '';
+            
+            const topHashtags = insights.hashtags.topHashtags || [];
+            
+            // Group hashtags into rows
+            const hashtagsPerRow = [3, 2, 3];
+            let hashtagIndex = 0;
+            
+            hashtagsPerRow.forEach(count => {
+                const row = document.createElement('div');
+                row.className = 'flex flex-wrap gap-2';
+                
+                for (let i = 0; i < count && hashtagIndex < topHashtags.length; i++) {
+                    const hashtag = topHashtags[hashtagIndex];
+                    const colors = ['primary', 'secondary', 'accent'];
+                    const color = colors[i % colors.length];
+                    
+                    const span = document.createElement('span');
+                    span.className = `px-3 py-1 bg-${color}/20 text-${color} rounded-full text-sm`;
+                    span.textContent = hashtag.tag;
+                    
+                    row.appendChild(span);
+                    hashtagIndex++;
+                }
+                
+                hashtagContainer.appendChild(row);
+            });
+            
+            // Update hashtag performance
+            const performanceContainer = document.querySelector('.mt-6.space-y-3');
+            if (performanceContainer) {
+                performanceContainer.innerHTML = '';
+                
+                topHashtags.slice(0, 3).forEach(hashtag => {
+                    const performanceItem = document.createElement('div');
+                    performanceItem.className = 'flex items-center justify-between';
+                    
+                    const percentage = Math.min((hashtag.count / Math.max(...topHashtags.map(h => h.count))) * 100, 100);
+                    
+                    performanceItem.innerHTML = `
+                        <span class="text-text-secondary text-sm">${hashtag.tag}</span>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-20 h-2 bg-surface-light rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-primary to-secondary" style="width: ${percentage}%"></div>
+                            </div>
+                            <span class="text-white text-sm">${Math.round(percentage)}%</span>
+                        </div>
+                    `;
+                    
+                    performanceContainer.appendChild(performanceItem);
+                });
+            }
+        }
+
+        // Update posting times with real data
+        function updatePostingTimes(timing) {
+            if (!timing || !timing.bestTimes) return;
+            
+            // This would require more complex logic to update the heatmap
+            // For now, we'll update based on the best times data
+            console.log('Best posting times:', timing.bestTimes);
+        }
+
+        // Update AI recommendations with real data
+        function updateAIRecommendations(recommendations) {
+            if (!recommendations) return;
+            
+            const recommendationsContainer = document.querySelector('.space-y-4');
+            if (!recommendationsContainer) return;
+            
+            // If recommendations is a string, display it as a single recommendation
+            if (typeof recommendations === 'string') {
+                recommendationsContainer.innerHTML = `
+                    <div class="p-4 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg border border-primary/20">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <div class="text-white font-medium text-sm mb-1">AI Recommendation</div>
+                                <div class="text-text-secondary text-xs">${recommendations}</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // Utility function to format numbers
+        function formatNumber(num) {
+            if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
+            if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
+            return num.toString();
+        }
+
+        // Utility function to truncate text
+        function truncateText(text, maxLength) {
+            if (!text) return '';
+            if (text.length <= maxLength) return text;
+            return text.substring(0, maxLength) + '...';
+        }
+
+        // Refresh functionality
+        const refreshBtn = document.getElementById('refresh-btn');
+        const loadingOverlay = document.getElementById('loading-overlay');
+
+        refreshBtn.addEventListener('click', function() {
+            // Add rotation animation to refresh button
+            refreshBtn.classList.add('animate-spin');
+            
+            // Reload analytics data
+            loadAnalyticsData().finally(() => {
+                refreshBtn.classList.remove('animate-spin');
+            });
+        });
+
+        // ... rest of existing code ...
+
+        // Auto-refresh data every 5 minutes
+        setInterval(() => {
+            loadAnalyticsData();
+            showNotification('Data updated automatically', 'info');
+        }, 300000); // 5 minutes
+
+        // Initialize dashboard on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadAnalyticsData();
+            
+            // ... rest of existing initialization code ...
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

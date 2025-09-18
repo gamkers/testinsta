@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --color-primary: #667eea; /* blue-indigo-500 */
+  --color-primary-50: #eef2ff; /* indigo-50 */
+  --color-primary-100: #e0e7ff; /* indigo-100 */
+  --color-primary-200: #c7d2fe; /* indigo-200 */
+  --color-primary-300: #a5b4fc; /* indigo-300 */
+  --color-primary-400: #818cf8; /* indigo-400 */
+  --color-primary-500: #667eea; /* indigo-500 */
+  --color-primary-600: #4f46e5; /* indigo-600 */
+  --color-primary-700: #4338ca; /* indigo-700 */
+  --color-primary-800: #3730a3; /* indigo-800 */
+  --color-primary-900: #312e81; /* indigo-900 */
+
+  /* Secondary Colors */
+  --color-secondary: #764ba2; /* purple-600 */
+  --color-secondary-50: #faf5ff; /* purple-50 */
+  --color-secondary-100: #f3e8ff; /* purple-100 */
+  --color-secondary-200: #e9d5ff; /* purple-200 */
+  --color-secondary-300: #d8b4fe; /* purple-300 */
+  --color-secondary-400: #c084fc; /* purple-400 */
+  --color-secondary-500: #a855f7; /* purple-500 */
+  --color-secondary-600: #764ba2; /* purple-600 */
+  --color-secondary-700: #7c3aed; /* purple-700 */
+  --color-secondary-800: #6b21a8; /* purple-800 */
+  --color-secondary-900: #581c87; /* purple-900 */
+
+  /* Accent Colors */
+  --color-accent: #a855f7; /* purple-500 */
+  --color-accent-50: #faf5ff; /* purple-50 */
+  --color-accent-100: #f3e8ff; /* purple-100 */
+  --color-accent-200: #e9d5ff; /* purple-200 */
+  --color-accent-300: #d8b4fe; /* purple-300 */
+  --color-accent-400: #c084fc; /* purple-400 */
+  --color-accent-500: #a855f7; /* purple-500 */
+  --color-accent-600: #9333ea; /* purple-600 */
+  --color-accent-700: #7c3aed; /* purple-700 */
+  --color-accent-800: #6b21a8; /* purple-800 */
+  --color-accent-900: #581c87; /* purple-900 */
+
+  /* Background Colors */
+  --color-background: #0f0f0f; /* gray-950 */
+  --color-surface: #1a1a1a; /* gray-900 */
+  --color-surface-light: #262626; /* gray-800 */
+
+  /* Text Colors */
+  --color-text-primary: #ffffff; /* white */
+  --color-text-secondary: #a1a1aa; /* gray-400 */
+  --color-text-muted: #71717a; /* gray-500 */
+
+  /* Status Colors */
+  --color-success: #10b981; /* emerald-500 */
+  --color-success-50: #ecfdf5; /* emerald-50 */
+  --color-success-100: #d1fae5; /* emerald-100 */
+  --color-success-500: #10b981; /* emerald-500 */
+  --color-success-600: #059669; /* emerald-600 */
+  --color-success-700: #047857; /* emerald-700 */
+
+  --color-warning: #f59e0b; /* amber-500 */
+  --color-warning-50: #fffbeb; /* amber-50 */
+  --color-warning-100: #fef3c7; /* amber-100 */
+  --color-warning-500: #f59e0b; /* amber-500 */
+  --color-warning-600: #d97706; /* amber-600 */
+  --color-warning-700: #b45309; /* amber-700 */
+
+  --color-error: #ef4444; /* red-500 */
+  --color-error-50: #fef2f2; /* red-50 */
+  --color-error-100: #fee2e2; /* red-100 */
+  --color-error-500: #ef4444; /* red-500 */
+  --color-error-600: #dc2626; /* red-600 */
+  --color-error-700: #b91c1c; /* red-700 */
+
+  /* Border Colors */
+  --color-border: rgba(255, 255, 255, 0.1); /* white-10 */
+  --color-border-light: rgba(255, 255, 255, 0.2); /* white-20 */
+}
+
+/* Base Styles */
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, var(--color-background) 0%, #1a0a2e 100%);
+    color: var(--color-text-primary);
+    min-height: 100vh;
+  }
+
+  /* Glassmorphism utility */
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--color-border);
+  }
+
+  /* Shimmer animation for loading states */
+  @keyframes shimmer {
+    0% {
+      background-position: -200px 0;
+    }
+    100% {
+      background-position: calc(200px + 100%) 0;
+    }
+  }
+
+  .shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .transition-smooth-long {
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Hover scale effect */
+  .hover-scale:hover {
+    transform: scale(1.02);
+  }
+
+  /* Shadow system */
+  .shadow-card {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  }
+
+  .shadow-modal {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+  }
+}
